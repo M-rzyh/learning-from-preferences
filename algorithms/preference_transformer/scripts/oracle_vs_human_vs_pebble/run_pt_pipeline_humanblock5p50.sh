@@ -20,7 +20,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
 ENV_TAG=lunarlander-mixture-v2-humanblock5p50-s${SEED}

@@ -11,7 +11,7 @@ import pyarrow.ipc
 
 GRID = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 _NONFS = "/scratch/marzii/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
@@ -35,12 +35,12 @@ def pt_series():
 
 def gail_series():
     z = []
-    for r in csv.DictReader(open("/home/marzii/IRL3/experiments/gail_grid_count_2026-06-18.csv")):
+    for r in csv.DictReader(open("/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv")):
         if r["condition_id"] == "count_N50" and r.get("eval_reward_mean"):
             try: z.append(float(r["eval_reward_mean"]))
             except ValueError: pass
     per = {}
-    csvf = sorted(glob.glob("/home/marzii/IRL3/experiments/gail_grid_noise_N50_*.csv"))[-1]
+    csvf = sorted(glob.glob("/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_N50_*.csv"))[-1]
     for r in csv.DictReader(open(csvf)):
         L = int(r["noise_pct"]); npz = f"{GAIL_BASE}/{r['slurm_job_id']}/eval_data/agent_rollouts.npz"
         if not os.path.exists(npz): continue

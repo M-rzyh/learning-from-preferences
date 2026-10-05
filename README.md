@@ -55,6 +55,19 @@ human labels and figures live on cluster storage (`$SCRATCH` for active runs, pr
 anything kept), and `.gitignore` keeps them out of the repository. **Human-subject preference data
 must never be committed.**
 
+### Local data links
+
+PT expects four entries in `algorithms/preference_transformer/` that point at cluster storage. They are
+gitignored, so each fresh clone has to recreate them:
+
+```bash
+cd algorithms/preference_transformer
+for d in human_label logs reward_model figures; do ln -s /scratch/$USER/PT/$d $d; done
+```
+
+`human_label/` holds preference-query sets: segment-pair indices plus a verdict, most of them synthetic.
+Each env folder in it must contain exactly three files (see the warning above).
+
 ## Provenance
 
 The repository was created on 2026-10-05 by copying the tracked files from two project-specific repos.

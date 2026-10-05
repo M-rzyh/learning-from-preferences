@@ -14,7 +14,7 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 G = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 CLEAN_C, NOISE_C = "#2ca02c", "#1f77b4"
 
 

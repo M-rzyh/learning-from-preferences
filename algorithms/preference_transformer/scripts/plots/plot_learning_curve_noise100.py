@@ -16,9 +16,9 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 PT_DIR = "/scratch/marzii/PT/lunarlander/grid_mixture_ms/lunarlander-grid-ms-N100-noise100"
-GAIL_IDX = "/home/marzii/IRL3/experiments/GAIL/gail_grid_noise_N15_2026-07-23.csv"
+GAIL_IDX = "/home/marzii/learning-from-demonstrations/experiments/GAIL/gail_grid_noise_N15_2026-07-23.csv"
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C, CLEAN_C = "#1f77b4", "#9467bd", "#2ca02c"
 GRID = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
 

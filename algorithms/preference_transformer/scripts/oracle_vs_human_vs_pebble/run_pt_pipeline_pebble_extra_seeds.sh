@@ -26,7 +26,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-1}}
 ENV_TAG=lunarlander-pebble100-s${SEED}
@@ -38,7 +38,7 @@ IQL_LOG_DIR=$SCRATCH/PT/lunarlander/iql_runs/pebble100/seed_${SEED}
 for f in "$SYNTHETIC" "$IQL_DATASET"; do
     [[ -f "$f" ]] || { echo "ERROR: $f missing." 1>&2; exit 1; }
 done
-[[ -f /home/marzii/PT/PreferenceTransformer/human_label/${ENV_TAG}/label_human ]] || {
+[[ -f /home/marzii/learning-from-preferences/algorithms/preference_transformer/human_label/${ENV_TAG}/label_human ]] || {
     echo "ERROR: human_label/${ENV_TAG}/label_human missing (need symlink to s0 dir)." 1>&2; exit 1; }
 
 echo "=== seed=$SEED  ENV_TAG=$ENV_TAG (labels = seed_0's PEBBLE 100, IQL on seed_0/medium-v2) ==="

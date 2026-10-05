@@ -17,11 +17,11 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-EVAL_RUN_LIST      = "/home/marzii/IRL3/experiments/eval_run_list.txt"
-GAIL_CSV_COUNT     = "/home/marzii/IRL3/experiments/gail_grid_count_2026-06-18.csv"
-GAIL_CSV_COUNT_FS  = "/home/marzii/IRL3/experiments/gail_grid_count_FS_2026-06-18.csv"
+EVAL_RUN_LIST      = "/home/marzii/learning-from-demonstrations/experiments/eval_run_list.txt"
+GAIL_CSV_COUNT     = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
+GAIL_CSV_COUNT_FS  = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_FS_2026-06-18.csv"
 GAIL_BASE          = Path("/scratch/marzii/imitation_runs/gail/lunarlander")
-FIG_DIR            = Path("/home/marzii/PT/PreferenceTransformer/figures")
+FIG_DIR            = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 SEC_PER_DEMO = 43.2

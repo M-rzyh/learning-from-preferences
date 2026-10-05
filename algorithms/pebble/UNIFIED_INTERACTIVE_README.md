@@ -16,11 +16,11 @@ salloc --account=aip-mtaylor3 --gres=gpu:1 --cpus-per-task=8 --mem=16G --time=08
 Then on the compute node:
 
 ```bash
-cd ~/BPref3
+cd ~/learning-from-preferences/algorithms/pebble
 module --force purge && module load StdEnv/2023
 eval "$(/scratch/marzii/miniconda3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/bpref39_clone
-./scripts/lunar_lander/500/web_full/run_PEBBLE.sh 2>&1 | tee ~/BPref3/logs/lunarlander/web_full_interactive.out
+./scripts/lunar_lander/500/web_full/run_PEBBLE.sh 2>&1 | tee ~/learning-from-preferences/algorithms/pebble/logs/lunarlander/web_full_interactive.out
 ```
 
 Note the JobID printed (`COMPARE_RUN_DIR=...lunarlander_web_full/<JOBID>/seed_12345`).
@@ -32,7 +32,7 @@ In a separate VS Code terminal on the login node:
 ```bash
 PARENT=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/<JOBID>
 
-OPENBLAS_NUM_THREADS=1 python /home/marzii/BPref3/label_web.py --mode online \
+OPENBLAS_NUM_THREADS=1 python /home/marzii/learning-from-preferences/algorithms/pebble/label_web.py --mode online \
   --online_query_dir "$PARENT" \
   --output "$PARENT/human_labels.pkl" \
   --port 8888
@@ -92,7 +92,7 @@ Two `train.csv` files:
 Plot side-by-side with the existing multi-seed plotter:
 
 ```bash
-python /home/marzii/BPref3/scripts/plot_pebble_multi_seed.py \
+python /home/marzii/learning-from-preferences/algorithms/pebble/scripts/plot_pebble_multi_seed.py \
   --group "Unified (interactive):$UJ" \
   --group "Split (resume):$UJ" \
   --root /scratch/marzii/compare_runs/pebble/lunarlander_web_full \

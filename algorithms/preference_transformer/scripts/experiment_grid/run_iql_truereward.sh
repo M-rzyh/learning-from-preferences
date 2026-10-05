@@ -36,7 +36,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SLURM_ARRAY_TASK_ID:-0}
 SHIFT=${SHIFT:-0.0}

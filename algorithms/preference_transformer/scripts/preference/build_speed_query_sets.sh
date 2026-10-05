@@ -20,12 +20,12 @@
 # Light job (re-encode ~400 clips). Submit with a short walltime:
 #   sbatch --time=00:30:00 scripts/preference/build_speed_query_sets.sh
 set -euo pipefail
-mkdir -p /home/marzii/PT/PreferenceTransformer/logs
+mkdir -p /home/marzii/learning-from-preferences/algorithms/preference_transformer/logs
 module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 ROLLOUT=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2          # clean source episodes + hdf5
 SRC_Q=$SCRATCH/PT/lunarlander/frame_blanking/pt_human/queries_n350 # the clean 350 indices

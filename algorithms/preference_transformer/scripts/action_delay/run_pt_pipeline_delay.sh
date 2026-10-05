@@ -27,7 +27,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 K=${K:?set K=0|5|10|20 (delay in sim steps)}
 case "$K" in 0|5|10|20) ;; *) echo "ERROR: K must be 0, 5, 10 or 20 (got '$K')" 1>&2; exit 1 ;; esac

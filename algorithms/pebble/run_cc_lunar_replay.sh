@@ -70,7 +70,7 @@ echo "===================================================="
 
 start_time=$(date +%s)
 
-cd ~/BPref3 || exit 1
+cd ~/learning-from-preferences/algorithms/pebble || exit 1
 
 # -u: unbuffered stdout/stderr so SLURM .out updates live (helps diagnose hangs)
 python -u train_PEBBLE.py \

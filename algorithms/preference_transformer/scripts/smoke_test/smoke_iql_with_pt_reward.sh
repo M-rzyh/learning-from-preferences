@@ -24,7 +24,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 DATASET=$SCRATCH/PT/lunarlander/seed_0/lunarlander-medium-v2.hdf5
 PT_CKPT=./reward_model/lunarlander/lunarlander-medium-v2-s0-oracle100/PrefTransformer/oracle100/s42

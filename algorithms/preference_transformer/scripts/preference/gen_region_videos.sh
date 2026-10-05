@@ -18,7 +18,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SRC=$SCRATCH/PT/lunarlander/frame_blanking/pt_human/videos_human_n350_clean
 DEST=$SCRATCH/PT/lunarlander/region_mask/pt_human

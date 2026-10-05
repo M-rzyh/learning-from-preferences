@@ -18,7 +18,7 @@
 # Final policy is saved by train_SAC.py as actor_<step>.pt / critic_<step>.pt /
 # critic_target_<step>.pt in the run dir.
 #
-# Submit (from ~/BPref3):
+# Submit (from ~/learning-from-preferences/algorithms/pebble):
 #   for s in 12345 23451 78906 89067 6789 13571 24681 35791 46801 57911; do
 #     sbatch --time=06:00:00 --job-name=sac-truereward-s${s} \
 #       --export=ALL,RUN_SCRIPT=./scripts/lunar_lander/100/sac_truereward/run_SAC.sh,SEEDS=$s \

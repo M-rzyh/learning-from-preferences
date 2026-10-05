@@ -27,7 +27,7 @@ module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 MODE=${1:-random_replace}; shift || true
 case "$MODE" in

@@ -25,7 +25,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 : "${VARIANT:?must set VARIANT=random|medium|expert}"
 : "${NUM_STEPS:?must set NUM_STEPS=...}"

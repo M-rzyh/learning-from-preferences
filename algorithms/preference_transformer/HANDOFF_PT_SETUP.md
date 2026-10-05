@@ -88,10 +88,10 @@ saves to one fresh SAC training run, then write rollout scripts.
 ## 3. Workspace boundary (IMPORTANT)
 
 The user explicitly drew a line:
-**All PT-related code and data lives in `/home/marzii/PT/PreferenceTransformer/`.**
+**All PT-related code and data lives in `/home/marzii/learning-from-preferences/algorithms/preference_transformer/`.**
 Do **NOT** mix PT code into `BPref3` (PEBBLE) or `IRL3` (GAIL).
 
-- PT-related Python scripts → `/home/marzii/PT/PreferenceTransformer/scripts/` (or sibling dirs).
+- PT-related Python scripts → `/home/marzii/learning-from-preferences/algorithms/preference_transformer/scripts/` (or sibling dirs).
 - PT-related data (the 5 LunarLander HDF5 files) → `$SCRATCH/PT/lunarlander/` (separate from `$SCRATCH/compare_runs/pebble/...`).
 - Comparison plots may live under `$SCRATCH/compare_runs/` since they cross-cut, but their source data must come from the PT workspace.
 
@@ -102,7 +102,7 @@ This is also saved as a memory:
 
 ## 4. What's on disk
 
-Repo: `/home/marzii/PT/PreferenceTransformer/` (cloned upstream JAX/Flax code).
+Repo: `/home/marzii/learning-from-preferences/algorithms/preference_transformer/` (cloned upstream JAX/Flax code).
 Layout:
 - `train_offline.py`, `robosuite_train_offline.py`, `train_finetune.py` — entry points (D4RL/Robosuite).
 - `JaxPref/new_preference_reward_main.py` — main PT/NMR/MR reward training.
@@ -213,7 +213,7 @@ are intentionally **skipped**.
 Goal: 5 HDF5 files matching D4RL Hopper/Walker2d's schema, with the same
 training methodology and performance buckets.
 
-Recommended files to create (all under `/home/marzii/PT/PreferenceTransformer/`):
+Recommended files to create (all under `/home/marzii/learning-from-preferences/algorithms/preference_transformer/`):
 - `scripts/offline_data/train_sac_for_offline.py` — trains SAC on
   LunarLanderContinuous-v2, saves the full replay buffer at the "medium"
   checkpoint AND at the "expert" checkpoint, plus the actor weights at both
@@ -293,7 +293,7 @@ python train_offline.py \
   - MuJoCo: `module load mujoco/2.3.6` on Compute Canada (check
     `module spider mujoco`). Set `MUJOCO_GL=osmesa`.
   - `pip install "mujoco-py>=2.1"`.
-  - `cd /home/marzii/PT/PreferenceTransformer/d4rl && pip install -e .`.
+  - `cd /home/marzii/learning-from-preferences/algorithms/preference_transformer/d4rl && pip install -e .`.
   - `pip install git+https://github.com/ARISE-Initiative/robosuite.git@v1.3`.
   - `pip install git+https://github.com/ARISE-Initiative/robomimic.git`.
 - **Whether to reuse one of the existing oracle PEBBLE runs to source the
@@ -312,7 +312,7 @@ In `/home/marzii/.claude/projects/-home-marzii-BPref3/memory/`:
 - `feedback_fragile_irl_env.md` — never modify IRL/IRL2/imitation-GAIL, only IRL3.
 - `feedback_output_subdirs.md` — env-specific subfolders (e.g. LunarLander/) in output dirs.
 - `feedback_check_after_each_task.md` — ask user to review after each task.
-- `project_pt_workspace.md` — PT code/data confined to `/home/marzii/PT/PreferenceTransformer/`.
+- `project_pt_workspace.md` — PT code/data confined to `/home/marzii/learning-from-preferences/algorithms/preference_transformer/`.
 
 In `/home/marzii/.claude/projects/-home-marzii-PT-PreferenceTransformer/memory/`
 (written 2026-05-06):

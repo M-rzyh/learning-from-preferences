@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 
 FB = "/scratch/marzii/PT/lunarlander/frame_blanking"
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 
 
@@ -79,9 +79,9 @@ def curve(ax, d, color, marker, label):
 
 def main():
     pto = pt_oracle()
-    gexp = gail_levels("/home/marzii/IRL3/experiments/gail_blind_expert_block_*.csv", "slurm_job_id")
+    gexp = gail_levels("/home/marzii/learning-from-demonstrations/experiments/gail_blind_expert_block_*.csv", "slurm_job_id")
     pth = pt_human()
-    ghum = gail_levels("/home/marzii/IRL3/experiments/gail_blind_human_*.csv", "slurm_job_id")
+    ghum = gail_levels("/home/marzii/learning-from-demonstrations/experiments/gail_blind_human_*.csv", "slurm_job_id")
     print("PT oracle:", {k: round(v[0]) for k, v in pto.items()})
     print("GAIL expert:", {k: round(v[0]) for k, v in gexp.items()})
     print("PT human:", {k: round(v[0]) for k, v in pth.items()})

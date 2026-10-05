@@ -28,7 +28,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 # Use a distinct env-suffix so sampled indices land in their own dir and
 # do NOT clobber the existing human-labelled human_label/lunarlander-medium-v2-s0/.

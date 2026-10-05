@@ -33,7 +33,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 PCT=${PCT:?set PCT=0|25|50|75}
 case "$PCT" in 0|25|50|75) ;; *) echo "ERROR: PCT must be 0, 25, 50 or 75 (got '$PCT')" 1>&2; exit 1 ;; esac

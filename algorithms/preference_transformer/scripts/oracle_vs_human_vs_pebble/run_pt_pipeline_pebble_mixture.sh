@@ -15,7 +15,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
 ENV_TAG=lunarlander-mixture-v2-pebble-s${SEED}
@@ -29,7 +29,7 @@ IQL_LOG_DIR=$SCRATCH/PT/lunarlander/iql_runs/pebble100_mixture/seed_${SEED}
 for f in "$SYNTHETIC" "$IQL_DATASET"; do
     [[ -f "$f" ]] || { echo "ERROR: $f missing." 1>&2; exit 1; }
 done
-[[ -f /home/marzii/PT/PreferenceTransformer/human_label/${ENV_TAG}/label_human ]] || {
+[[ -f /home/marzii/learning-from-preferences/algorithms/preference_transformer/human_label/${ENV_TAG}/label_human ]] || {
     echo "ERROR: human_label/${ENV_TAG}/label_human missing." 1>&2; exit 1; }
 
 echo "=== seed=$SEED  ENV_TAG=$ENV_TAG  (mixture IQL, PEBBLE labels, data_seed=42) ==="

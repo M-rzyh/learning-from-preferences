@@ -29,7 +29,7 @@ PEBBLE_ORACLE_TB_DIRS = [
     for j in (4883370, 4883371, 4883373)
 ]
 
-OUT = Path("/home/marzii/PT/PreferenceTransformer/figures/pt_iql_lunarlander_medium_replay_v2.png")
+OUT = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures/pt_iql_lunarlander_medium_replay_v2.png")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
 

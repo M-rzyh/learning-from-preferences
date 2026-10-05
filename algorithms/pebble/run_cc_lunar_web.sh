@@ -43,7 +43,7 @@ echo "jobid=$SLURM_JOB_ID"
 start_time=`date +%s`
 
 # 4. Run
-cd ~/BPref3 || exit 1
+cd ~/learning-from-preferences/algorithms/pebble || exit 1
 ./scripts/lunar_lander/500/web/run_PEBBLE.sh
 
 end_time=`date +%s`

@@ -49,7 +49,7 @@ echo "jobid=$SLURM_JOB_ID"
 
 start_time=$(date +%s)
 
-cd ~/BPref3 || exit 1
+cd ~/learning-from-preferences/algorithms/pebble || exit 1
 RESUME_FROM="$RESUME_FROM" ./scripts/lunar_lander/500/resume/run_PEBBLE.sh
 
 end_time=$(date +%s)

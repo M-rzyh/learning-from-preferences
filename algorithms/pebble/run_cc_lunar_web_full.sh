@@ -49,7 +49,7 @@ echo "jobid=$SLURM_JOB_ID"
 start_time=$(date +%s)
 
 # 4. Run
-cd ~/BPref3 || exit 1
+cd ~/learning-from-preferences/algorithms/pebble || exit 1
 # Which inner script to run. Default = the original 500-folder web_full script, so
 # existing submissions are unchanged. For the 100-label study pass
 # RUN_SCRIPT=./scripts/lunar_lander/100/web_full/run_PEBBLE.sh

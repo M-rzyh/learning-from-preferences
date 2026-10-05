@@ -34,8 +34,8 @@ import pyarrow.ipc
 PT_BASE = "/scratch/marzii/PT/lunarlander/sim_speed"
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
 DEMO_ROOT = "/scratch/marzii/imitation_runs/sim_speed/demos/human"
-EXP = "/home/marzii/IRL3/experiments"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+EXP = "/home/marzii/learning-from-demonstrations/experiments"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C = "#1f77b4"          # blue   — PT
 GA_FLAG_C = "#d62728"     # red    — GAIL flagged (curated 15)
 GA_FIRST15_C = "#ff7f0e"  # orange — GAIL first-15 (uncurated, count-matched)

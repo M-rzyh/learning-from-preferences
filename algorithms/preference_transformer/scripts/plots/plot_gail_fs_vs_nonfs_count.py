@@ -11,8 +11,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-GAIL_CSV = "/home/marzii/IRL3/experiments/gail_grid_2026-05-12.csv"
-FIG_DIR = Path("/home/marzii/PT/PreferenceTransformer/figures")
+GAIL_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_2026-05-12.csv"
+FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 GAIL_SEC_PER_DEMO = 43.2

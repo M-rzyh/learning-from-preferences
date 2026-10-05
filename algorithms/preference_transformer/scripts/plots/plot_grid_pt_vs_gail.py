@@ -26,11 +26,11 @@ import pyarrow.ipc
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
 GRID_ROOT = SCRATCH / "PT/lunarlander/grid_mixture"
 GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
-GAIL_CSV = "/home/marzii/IRL3/experiments/gail_grid_2026-05-12.csv"
-GAIL_COUNT_CSV_NEW = "/home/marzii/IRL3/experiments/gail_grid_count_2026-06-18.csv"
-GAIL_NOISE_CSV_NEW = "/home/marzii/IRL3/experiments/gail_grid_noise_2026-06-18.csv"
+GAIL_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_2026-05-12.csv"
+GAIL_COUNT_CSV_NEW = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
+GAIL_NOISE_CSV_NEW = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_2026-06-18.csv"
 GAIL_BASE = Path("/scratch/marzii/imitation_runs/gail/lunarlander")
-FIG_DIR = Path("/home/marzii/PT/PreferenceTransformer/figures")
+FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 PT_SEC_PER_LABEL = 5.81     # PT human100 measurement

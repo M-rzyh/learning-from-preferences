@@ -20,7 +20,7 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-GAIL_CSV = "/home/marzii/IRL3/experiments/GAIL/gail_grid_count_2026-06-18.csv"
+GAIL_CSV = "/home/marzii/learning-from-demonstrations/experiments/GAIL/gail_grid_count_2026-06-18.csv"
 MS = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
 DEMO_SEC, PAIR_SEC = 11.431, 9.074          # measured means; see docstring
 GAIL_C, PT_C = "#2ca02c", "#1f77b4"
@@ -67,7 +67,7 @@ def main():
     ax.legend(loc="lower right", fontsize=10)
     ax.grid(True, alpha=0.3)
     fig.tight_layout()
-    out = "/home/marzii/PT/PreferenceTransformer/figures/grid_count_pt_vs_gail_humantime.png"
+    out = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures/grid_count_pt_vs_gail_humantime.png"
     fig.savefig(out, dpi=150); print("\nSaved:", out)
 
 

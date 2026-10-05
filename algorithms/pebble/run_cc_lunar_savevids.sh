@@ -44,7 +44,7 @@ echo "jobid=$SLURM_JOB_ID"
 start_time=`date +%s`
 
 # 4. Run with query video saving enabled for offline human labeling
-cd ~/BPref3 || exit 1
+cd ~/learning-from-preferences/algorithms/pebble || exit 1
 export SAVE_QUERY_VIDEOS=true
 ./scripts/lunar_lander/500/oracle/run_PEBBLE.sh
 

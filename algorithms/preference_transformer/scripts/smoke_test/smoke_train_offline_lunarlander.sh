@@ -23,7 +23,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 WORK=${TMPDIR:-/tmp}/pt-iql-smoke-${SLURM_JOB_ID:-local}
 mkdir -p "$WORK"

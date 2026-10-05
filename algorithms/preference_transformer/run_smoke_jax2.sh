@@ -35,10 +35,10 @@ nvidia-smi --query-gpu=name,driver_version,compute_cap --format=csv 2>&1 | head 
 
 echo ""
 echo "=== Smoke test #2 ==="
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 python -u <<'PY'
 import sys
-sys.path.insert(0, '/home/marzii/PT/PreferenceTransformer')
+sys.path.insert(0, '/home/marzii/learning-from-preferences/algorithms/preference_transformer')
 
 import jax, jaxlib, flax, optax, distrax, chex
 import orbax.checkpoint as ocp

@@ -24,7 +24,7 @@ import numpy as np
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
 GRID_ROOT = SCRATCH / "PT/lunarlander/grid_mixture"
-FIG_DIR = Path("/home/marzii/PT/PreferenceTransformer/figures")
+FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 # Human-time conversion (from PT human100 medium-v2 measurement: 5.81 sec/label).

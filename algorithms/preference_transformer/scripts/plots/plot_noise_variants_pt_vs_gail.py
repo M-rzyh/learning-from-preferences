@@ -32,9 +32,9 @@ import pyarrow.ipc
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
 GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
 GAIL_BASE = Path("/scratch/marzii/imitation_runs/gail/lunarlander")
-GAIL_NOISE_OLD = "/home/marzii/IRL3/experiments/gail_grid_noise_2026-06-18.csv"   # coin_uniform (N=100)
-GAIL_COUNT_CSV = "/home/marzii/IRL3/experiments/gail_grid_count_2026-06-18.csv"   # count_N100 = 0% baseline
-FIG_DIR = Path("/home/marzii/PT/PreferenceTransformer/figures")
+GAIL_NOISE_OLD = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_2026-06-18.csv"   # coin_uniform (N=100)
+GAIL_COUNT_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"   # count_N100 = 0% baseline
+FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 PT_COLOR = "#1f77b4"
@@ -95,7 +95,7 @@ def load_gail_coin_uniform():
 
 def load_gail_variants():
     gail = defaultdict(lambda: defaultdict(list))
-    for csvp in sorted(glob.glob("/home/marzii/IRL3/experiments/gail_noise_variants_*.csv")):
+    for csvp in sorted(glob.glob("/home/marzii/learning-from-demonstrations/experiments/gail_noise_variants_*.csv")):
         for r in csv.DictReader(open(csvp)):
             npz = GAIL_BASE / r["slurm_job_id"] / "eval_data" / "agent_rollouts.npz"
             if not npz.exists():

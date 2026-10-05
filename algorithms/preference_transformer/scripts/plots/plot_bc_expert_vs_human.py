@@ -15,8 +15,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 BC_RUNS = "/scratch/marzii/imitation_runs/bc/lunarlander"
-EXP = "/home/marzii/IRL3/experiments"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+EXP = "/home/marzii/learning-from-demonstrations/experiments"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 CONDS = ["expert15", "human_flagged15", "human_first15"]
 LABELS = {"expert15": "Expert-15\n(SAC)", "human_flagged15": "Human-15\nflagged (best)",
           "human_first15": "Human-15\nfirst (uncurated)"}

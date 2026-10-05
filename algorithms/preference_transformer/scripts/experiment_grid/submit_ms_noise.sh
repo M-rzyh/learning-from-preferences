@@ -14,7 +14,7 @@
 #
 # Drives run_grid_ms_noise.sh. Labels for this MODE + N must already exist.
 set -euo pipefail
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 MODE=${1:-random_replace}; shift || true
 case "$MODE" in

@@ -47,7 +47,7 @@ export HUMAN_LABELS_PATH=${HUMAN_LABELS_PATH:-/scratch/marzii/compare_runs/pebbl
 start_time=`date +%s`
 
 # 4. Run with offline human labels
-cd ~/BPref3 || exit 1
+cd ~/learning-from-preferences/algorithms/pebble || exit 1
 ./scripts/lunar_lander/500/human/run_PEBBLE.sh
 
 end_time=`date +%s`

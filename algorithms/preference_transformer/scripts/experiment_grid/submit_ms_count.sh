@@ -10,7 +10,7 @@
 # The N values swept are the COUNTS list below — edit it to change the count axis.
 # Drives run_grid_ms_count.sh (one array job per N). Labels for each N must exist.
 set -euo pipefail
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 COUNTS=(50 100 250 500 750 1000)   # <-- edit to change which counts are swept
 

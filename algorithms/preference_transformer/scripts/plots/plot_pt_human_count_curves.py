@@ -38,7 +38,7 @@ def smooth(y, w):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="/home/marzii/IRL3/figures/pt_human_count_curves.png")
+    ap.add_argument("--out", default="/home/marzii/learning-from-demonstrations/figures/pt_human_count_curves.png")
     ap.add_argument("--window", type=int, default=5, help="rolling mean in eval points (1 = raw)")
     ap.add_argument("--cond", default="lunarlander-human-count-N{N}-fixedlabels")
     ap.add_argument("--ns", default="10,50,100,750,1000")

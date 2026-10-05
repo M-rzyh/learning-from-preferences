@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 GA = "/scratch/marzii/imitation_runs/gail/lunarlander"
 BW = "/scratch/marzii/imitation_runs/bc_warmstart/lunarlander"
 PT_MS = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
-EXP = "/home/marzii/IRL3/experiments"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+EXP = "/home/marzii/learning-from-demonstrations/experiments"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 
 PT_SEC_PER_PREF = 151 * 60 / 1000    # 9.06 s/preference
 DEMO_SEC = 54 * 60 / 300             # 10.8 s/demo

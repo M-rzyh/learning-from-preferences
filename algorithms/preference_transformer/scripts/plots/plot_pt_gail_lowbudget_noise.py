@@ -29,8 +29,8 @@ import numpy as np
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
 GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
 GAIL_BASE = SCRATCH / "imitation_runs/gail/lunarlander"
-GAIL_COUNT_CSV = "/home/marzii/IRL3/experiments/gail_grid_count_2026-06-18.csv"
-FIG_DIR = Path("/home/marzii/PT/PreferenceTransformer/figures")
+GAIL_COUNT_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
+FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -104,7 +104,7 @@ def gail_series():
     if m is not None:
         out.append({"pct": 0, "mean": m, "std": s, "n": n})
     # 10..100 from the newest N5 noise index CSV
-    n5_csvs = sorted(glob.glob("/home/marzii/IRL3/experiments/gail_grid_noise_N5_*.csv"))
+    n5_csvs = sorted(glob.glob("/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_N5_*.csv"))
     if n5_csvs:
         noise = _load_gail_csv(n5_csvs[-1])
         for pct in LEVELS:

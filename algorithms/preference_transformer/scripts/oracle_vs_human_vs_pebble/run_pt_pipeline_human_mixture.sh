@@ -15,7 +15,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
 ENV_TAG=lunarlander-mixture-v2-human-s${SEED}
@@ -24,7 +24,7 @@ CKPT_DIR=./reward_model/${ENV_TAG%%-*}/${ENV_TAG}/PrefTransformer/human100/s${SE
 IQL_LOG_DIR=$SCRATCH/PT/lunarlander/iql_runs/human100_mixture/seed_${SEED}
 
 [[ -f "$DATASET" ]] || { echo "ERROR: $DATASET missing." 1>&2; exit 1; }
-[[ -f /home/marzii/PT/PreferenceTransformer/human_label/${ENV_TAG}/label_human ]] || {
+[[ -f /home/marzii/learning-from-preferences/algorithms/preference_transformer/human_label/${ENV_TAG}/label_human ]] || {
     echo "ERROR: human_label/${ENV_TAG}/label_human missing." 1>&2; exit 1; }
 
 echo "=== seed=$SEED  ENV_TAG=$ENV_TAG  (mixture, human 100, data_seed=42) ==="

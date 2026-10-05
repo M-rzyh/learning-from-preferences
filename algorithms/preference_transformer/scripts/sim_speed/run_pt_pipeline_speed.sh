@@ -24,7 +24,7 @@ module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 FPS=${FPS:?set FPS=10|20|50}
 case "$FPS" in 10|20|50) ;; *) echo "ERROR: FPS must be 10, 20 or 50 (got '$FPS')" 1>&2; exit 1 ;; esac

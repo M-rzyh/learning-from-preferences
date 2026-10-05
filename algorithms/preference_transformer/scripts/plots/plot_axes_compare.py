@@ -29,7 +29,7 @@ from matplotlib.lines import Line2D
 
 import plot_axis_human as P   # reuse CFG + loaders
 
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 AXES = ["vanish", "speed", "delay"]
 AXCOL = {"vanish": "#1f77b4", "speed": "#2ca02c", "delay": "#d62728"}
 ARMSTYLE = {"all": dict(ls="-", lw=3.0, ms=8), "flagged": dict(ls="--", lw=1.8, ms=6),

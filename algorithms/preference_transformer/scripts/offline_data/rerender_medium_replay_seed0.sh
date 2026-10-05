@@ -30,7 +30,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 OUT=$SCRATCH/PT/lunarlander/seed_0/render/medium-replay-v2
 

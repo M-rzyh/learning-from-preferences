@@ -26,8 +26,8 @@ import pyarrow.ipc
 
 PT_BASE = "/scratch/marzii/PT/lunarlander/frame_blanking"
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-EXP = "/home/marzii/IRL3/experiments"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+EXP = "/home/marzii/learning-from-demonstrations/experiments"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#2ca02c"
 LEVELS = [0, 25, 50, 75]
 

@@ -24,7 +24,7 @@
 set -euo pipefail
 
 PY=/scratch/marzii/envs/pt/bin/python
-REPO=/home/marzii/PT/PreferenceTransformer
+REPO=/home/marzii/learning-from-preferences/algorithms/preference_transformer
 SRC=/scratch/marzii/PT/lunarlander/frame_blanking/pt_human/videos_human_n350_clean
 DEST_ROOT=/scratch/marzii/PT/lunarlander/lander_vanish/pt_human
 N=100          # pairs per set (the low budget)

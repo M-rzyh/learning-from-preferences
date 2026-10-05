@@ -47,7 +47,7 @@ trained). Reuse it — no need to relabel.
 
 To make a *fresh* 0% run instead:
 ```bash
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 PY=/scratch/marzii/envs/pt/bin/python
 RMIX=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
 RDIR=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2
@@ -64,7 +64,7 @@ $PY scripts/preference/labels_web_to_pt_format.py --labels $B/labels_0pct.pkl --
 Renders on the **same 100 pairs** as `human100_mixture` so 0% vs 50% is a clean
 within-subject comparison (reuse `human100_mixture` as the 0% point).
 ```bash
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 PY=/scratch/marzii/envs/pt/bin/python
 RDIR=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2
 B=$SCRATCH/PT/lunarlander/frame_blanking/pt_human

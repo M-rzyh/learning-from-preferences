@@ -35,7 +35,7 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-0}
 ENV_TAG=lunarlander-medium-v2-human-s${SEED}
@@ -47,7 +47,7 @@ if [ ! -f "$DATASET" ]; then
     echo "ERROR: $DATASET missing." 1>&2
     exit 1
 fi
-if [ ! -f /home/marzii/PT/PreferenceTransformer/human_label/${ENV_TAG}/label_human ]; then
+if [ ! -f /home/marzii/learning-from-preferences/algorithms/preference_transformer/human_label/${ENV_TAG}/label_human ]; then
     echo "ERROR: human_label/${ENV_TAG}/label_human missing." 1>&2
     exit 1
 fi

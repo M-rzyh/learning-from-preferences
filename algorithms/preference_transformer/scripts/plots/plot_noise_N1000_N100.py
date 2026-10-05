@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 import pyarrow.ipc
 
 GRID = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
-EXP = "/home/marzii/IRL3/experiments"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+EXP = "/home/marzii/learning-from-demonstrations/experiments"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 _NONFS = "/scratch/marzii/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"

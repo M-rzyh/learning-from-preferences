@@ -19,7 +19,7 @@ import pyarrow.ipc
 
 GRID = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
 GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
@@ -41,7 +41,7 @@ def pt_series(noise_word, clean_word):
 
 def gail_zero_N5():
     vals = []
-    for r in csv.DictReader(open("/home/marzii/IRL3/experiments/gail_grid_count_2026-06-18.csv")):
+    for r in csv.DictReader(open("/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv")):
         if r["condition_id"] == "count_N5" and r.get("eval_reward_mean"):
             try:
                 vals.append(float(r["eval_reward_mean"]))
@@ -136,8 +136,8 @@ def main():
     z = gail_zero_N5()
     pt_rand = pt_series("noise", "clean")
     pt_flip = pt_series("flipnoise", "flipclean")
-    g_rand = gail_from_csv("/home/marzii/IRL3/experiments/gail_grid_noise_N5_*.csv", z)
-    g_flip = gail_from_csv("/home/marzii/IRL3/experiments/gail_noise_variants_N5_*.csv", z)
+    g_rand = gail_from_csv("/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_N5_*.csv", z)
+    g_flip = gail_from_csv("/home/marzii/learning-from-demonstrations/experiments/gail_noise_variants_N5_*.csv", z)
     dr_rand = demo_returns(lambda L: [f"{_NONFS}/n100_p{L}_s{s}" for s in range(30)])
     dr_flip = demo_returns(lambda L: [f"{_CEXCL}/n100_p{L}_s{s}" for s in range(30)])
     print("PT N=50 random:", {k: round(v[0]) for k, v in pt_rand.items()})

@@ -29,13 +29,13 @@
 #   K=10 NUM_STEPS=5000 PER_VARIANT=2000 NUM_QUERY=5 SUFFIX=_val \              # tiny validation
 #        sbatch scripts/preference/build_delay_query_sets.sh
 set -euo pipefail
-mkdir -p /home/marzii/PT/PreferenceTransformer/logs
+mkdir -p /home/marzii/learning-from-preferences/algorithms/preference_transformer/logs
 
 module --force purge; module load StdEnv/2023
 eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 K=${K:?set K=0|5|10|20 (delay in sim steps)}
 NUM_STEPS=${NUM_STEPS:-500000}   # per medium/expert roll (production); need >=1.5*PER_VARIANT

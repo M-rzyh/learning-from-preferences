@@ -31,7 +31,7 @@ hash -r
 export PYTHONWARNINGS="ignore::DeprecationWarning"
 
 mkdir -p logs/lunarlander
-cd ~/BPref3
+cd ~/learning-from-preferences/algorithms/pebble
 
 SEED=12345
 SMOKE_ROOT="$SCRATCH/compare_runs/pebble/lunarlander_smoke/${SLURM_JOB_ID}"

@@ -21,7 +21,7 @@ eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 # RENDERED mixture (same data the human labels from real videos) — keeps the
 # blind-oracle (#3) and blind-human (#4) PT arms on identical segments.
 DATASET=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5

@@ -21,7 +21,7 @@ salloc --account=aip-mtaylor3 --gres=gpu:1 --cpus-per-task=8 --mem=16G --time=06
 Then on the compute node:
 
 ```bash
-cd ~/BPref3
+cd ~/learning-from-preferences/algorithms/pebble
 module --force purge
 module load StdEnv/2023
 eval "$(/scratch/marzii/miniconda3/bin/conda shell.bash hook)"
@@ -56,7 +56,7 @@ Use the **parent dir** (drop `/seed_<SEED>`):
 ```bash
 PARENT=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/4895573
 
-OPENBLAS_NUM_THREADS=1 python /home/marzii/BPref3/label_web.py --mode online \
+OPENBLAS_NUM_THREADS=1 python /home/marzii/learning-from-preferences/algorithms/pebble/label_web.py --mode online \
   --online_query_dir "$PARENT" \
   --output "$PARENT/human_labels.pkl" \
   --port 7654

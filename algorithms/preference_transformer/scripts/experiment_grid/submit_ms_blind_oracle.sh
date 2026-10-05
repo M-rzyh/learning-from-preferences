@@ -4,7 +4,7 @@
 # blank level. Labels must exist (run gen_ms_blind_oracle.sh first).
 #   bash scripts/experiment_grid/submit_ms_blind_oracle.sh [NSEEDS] [pct ...]
 set -euo pipefail
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 NSEEDS=${1:-5}; shift || true
 PCTS=("$@"); [ ${#PCTS[@]} -eq 0 ] && PCTS=(0 25 50 75)

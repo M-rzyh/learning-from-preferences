@@ -16,7 +16,7 @@ WHAT THE AXES ARE (verified in code and on disk, not assumed):
 Episodes are binned in env-step windows and averaged, then aggregated across
 seeds as mean +/- s.e. Colours are the standard tab10 palette.
 
-Run from ~/BPref3 with the bpref39_clone env:
+Run from ~/learning-from-preferences/algorithms/pebble with the bpref39_clone env:
     python plots/plot_pebble_learning_curves.py
     python plots/plot_pebble_learning_curves.py --bin 10000 --smooth 3 --err sd
 """

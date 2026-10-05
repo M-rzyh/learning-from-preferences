@@ -20,8 +20,8 @@ import matplotlib.gridspec as gridspec
 import pyarrow.ipc
 
 GAIL_RUNS = "/scratch/marzii/imitation_runs/gail/lunarlander"
-EXP = "/home/marzii/IRL3/experiments"
-FIG = "/home/marzii/PT/PreferenceTransformer/figures"
+EXP = "/home/marzii/learning-from-demonstrations/experiments"
+FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C = "#1f77b4"          # PT preferences
 ALL_C = "#b30000"         # GAIL all-saved — the HEADLINE arm (bold solid)
 FLAG_C = "#d62728"        # GAIL flagged (dashed)

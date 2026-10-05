@@ -1,6 +1,6 @@
 """Overlay PT IQL learning curves (Runs A/B/C) with PEBBLE's own learning curve.
 
-Plot style follows /home/marzii/IRL3/scripts/plot_gail_multi_seed.py:
+Plot style follows /home/marzii/learning-from-demonstrations/scripts/plot_gail_multi_seed.py:
     figsize=(11, 6), dpi=150, default-matplotlib colors,
     linewidth=1.8, fill_between alpha=0.18, grid alpha=0.3,
     legend lower-right fontsize=9, last10% summary in each legend label.
@@ -39,7 +39,7 @@ PEBBLE_ORACLE_TB_DIRS = [
     for j in (4883370, 4883371, 4883373)
 ]
 
-OUT = Path("/home/marzii/PT/PreferenceTransformer/figures/pt_iql_lunarlander_medium_v2.png")
+OUT = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures/pt_iql_lunarlander_medium_v2.png")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
 

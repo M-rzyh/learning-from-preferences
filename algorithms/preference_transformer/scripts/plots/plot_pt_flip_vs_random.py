@@ -21,7 +21,7 @@ import numpy as np
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
 GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
-FIG_DIR = Path("/home/marzii/PT/PreferenceTransformer/figures")
+FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 PCTS = [0, 20, 40, 60, 80, 100]

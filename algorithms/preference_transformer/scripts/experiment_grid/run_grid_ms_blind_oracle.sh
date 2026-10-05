@@ -22,7 +22,7 @@ eval "$(/scratch/marzii/miniforge3/bin/conda shell.bash hook)"
 conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 export SDL_VIDEODRIVER=dummy
-cd /home/marzii/PT/PreferenceTransformer
+cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 : "${BLANK_PCT:?must export BLANK_PCT=<integer 0-100>}"
 SEED=${SLURM_ARRAY_TASK_ID:-0}
