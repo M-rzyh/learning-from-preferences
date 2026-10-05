@@ -1,0 +1,88 @@
+defaults:
+    - agent: sac
+    
+# this needs to be specified manually
+experiment: PEBBLE
+
+# reward learning
+segment: 50
+activation: tanh
+num_seed_steps: 1000
+num_unsup_steps: 5000
+num_interact: 5000
+reward_lr: 0.0003
+reward_batch: 128
+reward_update: 200
+feed_type: 0
+reset_update: 100
+topK: 5
+ensemble_size: 3
+max_feedback: 1400
+large_batch: 10
+label_margin: 0.0
+teacher_beta: -1
+teacher_gamma: 1
+teacher_eps_mistake: 0
+teacher_eps_skip: 0
+teacher_eps_equal: 0
+
+# scheduling
+reward_schedule: 0
+
+num_train_steps: 1e6
+replay_buffer_capacity: ${num_train_steps}
+
+# evaluation config
+eval_frequency: 10000
+num_eval_episodes: 10
+device: cpu
+
+# logger
+log_frequency: 10000
+log_save_tb: true
+
+# video recorder
+save_video: false
+
+# save segment query videos for offline human labeling (renders at query time, no memory overhead)
+save_query_videos: false
+
+# online web labeling settings (feed_type=7)
+web_poll_interval: 2.0
+web_timeout: 3600
+
+# checkpoint at end of feedback collection so a separate job can resume the
+# pure-RL portion. Setting checkpoint_at_max_feedback=true makes this run save
+# the full training state as soon as total_feedback >= max_feedback.
+checkpoint_at_max_feedback: false
+# Whether to also exit the training loop after that checkpoint is written.
+# True (default) = split workflow: stop here, resume RL via run_cc_lunar_resume.
+# False = unified-interactive workflow: save the checkpoint mid-run but keep
+# training to num_train_steps. Lets the same job collect labels AND finish RL.
+exit_after_max_feedback_checkpoint: true
+# Path to a checkpoint.pt produced by a previous run. When set, training resumes
+# from that state (same log dir, same TB file, append mode for csvs).
+resume_from: null
+# Path to a previously saved online_queries/ directory. When set, web_sampling
+# reads the saved segment metadata + labels from disk instead of rendering and
+# waiting for a human. Used to recover from a crashed run without re-labeling.
+# Falls through to live web_sampling for any batch_NNN that's not on disk.
+web_replay_from: null
+
+# path to offline human labels pickle (from label_web.py or human_label.py)
+# when set, loads these labels instead of generating queries
+human_labels_path: null
+
+# setups
+seed: 1
+
+# Environment
+env: dog_stand
+max_episode_steps: null
+gradient_update: 1
+
+# hydra configuration
+hydra:
+    name: ${env}
+    run:
+        dir: ./exp/${env}/H${diag_gaussian_actor.params.hidden_dim}_L${diag_gaussian_actor.params.hidden_depth}_lr${agent.params.actor_lr}/teacher_b${teacher_beta}_g${teacher_gamma}_m${teacher_eps_mistake}_s${teacher_eps_skip}_e${teacher_eps_equal}/label_smooth_${label_margin}/schedule_${reward_schedule}/${experiment}_init${num_seed_steps}_unsup${num_unsup_steps}_inter${num_interact}_maxfeed${max_feedback}_seg${segment}_act${activation}_Rlr${reward_lr}_Rbatch${reward_batch}_Rupdate${reward_update}_en${ensemble_size}_sample${feed_type}_large_batch${large_batch}_seed${seed}
