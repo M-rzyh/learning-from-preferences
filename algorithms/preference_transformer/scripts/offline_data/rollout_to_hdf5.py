@@ -3,8 +3,8 @@
 Usage
 -----
     python -m scripts.offline_data.rollout_to_hdf5 \
-        --actor $SCRATCH/PT/lunarlander/sac_run/expert/actor.zip \
-        --output $SCRATCH/PT/lunarlander/lunarlander-expert-v2.hdf5 \
+        --actor $SCRATCH/learning-from-preferences/pt/lunarlander/sac_run/expert/actor.zip \
+        --output $SCRATCH/learning-from-preferences/pt/lunarlander/lunarlander-expert-v2.hdf5 \
         --num_steps 1000000 --deterministic --seed 0
 
 For the "random" variant pass `--actor random` to use uniform [-1, 1]^2

@@ -30,7 +30,7 @@ hash -r
 
 # UNIFIED workflow: write to lunarlander_web_full/<JOBID>/...
 # (NOT lunarlander_web — that's the split-workflow path.)
-export PARENT_RUN_DIR="$SCRATCH/compare_runs/pebble/lunarlander_web_full/$SLURM_JOB_ID"
+export PARENT_RUN_DIR="$SCRATCH/learning-from-preferences/pebble/lunarlander_web_full/$SLURM_JOB_ID"
 mkdir -p "$PARENT_RUN_DIR"
 LOG="$PARENT_RUN_DIR/run.out"
 echo "PARENT_RUN_DIR=$PARENT_RUN_DIR"
@@ -48,13 +48,13 @@ at the next episode boundary after max_feedback hits, then keeps training to
 Look at the training output. It prints:
 
 ```
-COMPARE_RUN_DIR=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/<JOBID>/seed_<SEED>
+COMPARE_RUN_DIR=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/<JOBID>/seed_<SEED>
 ```
 
 Use the **parent dir** (drop `/seed_<SEED>`):
 
 ```bash
-PARENT=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/4895573
+PARENT=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/4895573
 
 OPENBLAS_NUM_THREADS=1 python /home/marzii/learning-from-preferences/algorithms/pebble/label_web.py --mode online \
   --online_query_dir "$PARENT" \
@@ -108,8 +108,8 @@ You can close the browser; the interactive job continues training to step 1M.
 
 ```bash
 UJ=<UNIFIED_JOBID>
-SRC=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/$UJ/seed_12345/pebble
-COMPARE=/scratch/marzii/compare_runs/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble
+SRC=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/$UJ/seed_12345/pebble
+COMPARE=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble
 mkdir -p "$COMPARE"
 cp -p "$SRC/checkpoint.pt"* "$COMPARE/"
 RESUME_FROM="$COMPARE/checkpoint.pt" sbatch --time=05:00:00 run_cc_lunar_resume.sh
@@ -121,7 +121,7 @@ The copy is required so the resume's logs/CSVs/TB don't collide with the still-r
 > interactive job exits at max_feedback. Then submit the resume directly from
 > the original checkpoint location:
 > ```bash
-> RESUME_FROM=/scratch/marzii/compare_runs/pebble/lunarlander_web/<JOBID>/seed_12345/pebble/checkpoint.pt \
+> RESUME_FROM=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web/<JOBID>/seed_12345/pebble/checkpoint.pt \
 >   sbatch run_cc_lunar_resume.sh
 > ```
 
@@ -138,7 +138,7 @@ comparison) overlaid:
 ```bash
 UJ=<UNIFIED_JOBID>   # the SLURM_JOB_ID from your salloc
 
-tensorboard --logdir_spec "unified:/scratch/marzii/compare_runs/pebble/lunarlander_web_full/$UJ/seed_12345/pebble/tb,compare:/scratch/marzii/compare_runs/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble/tb" --port 6010 --host 127.0.0.1
+tensorboard --logdir_spec "unified:/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/$UJ/seed_12345/pebble/tb,compare:/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble/tb" --port 6010 --host 127.0.0.1
 ```
 
 (The `compare` directory will be empty until you submit the comparison sbatch

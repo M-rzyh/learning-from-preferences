@@ -13,7 +13,7 @@
 # lockstep with the replay-buffer transitions, for Run B (human) labelling
 # on medium-replay.
 #
-# Output: $SCRATCH/PT/lunarlander/seed_0/render/medium-replay-v2/
+# Output: $SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/medium-replay-v2/
 #   actor.zip, replay.pkl
 #   lunarlander-medium-replay-v2.hdf5
 #   episodes/episode_NNNNN.mp4
@@ -32,7 +32,7 @@ export SDL_VIDEODRIVER=dummy
 
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
-OUT=$SCRATCH/PT/lunarlander/seed_0/render/medium-replay-v2
+OUT=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/medium-replay-v2
 
 python -m scripts.offline_data.train_sac_with_video \
     --save_dir "$OUT" \

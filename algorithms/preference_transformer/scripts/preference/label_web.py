@@ -23,8 +23,8 @@ label_human}` triple.
 Usage
 -----
     python -m scripts.preference.label_web \
-        --query_dir $SCRATCH/PT/lunarlander/labels/lunarlander-medium-replay-v2/seed_0/videos \
-        --output    $SCRATCH/PT/lunarlander/labels/lunarlander-medium-replay-v2/seed_0/labels.pkl \
+        --query_dir $SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-replay-v2/seed_0/videos \
+        --output    $SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-replay-v2/seed_0/labels.pkl \
         --port 8080
 """
 

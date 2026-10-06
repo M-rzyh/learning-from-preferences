@@ -26,9 +26,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.transforms
 
-RUNS_ROOT = Path("/scratch/marzii/PT/lunarlander/grid_mixture_ms")
+RUNS_ROOT = Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms")
 BASELINE_DIR = RUNS_ROOT / "lunarlander-truereward-iql"
-OUT_DEFAULT = Path("/scratch/marzii/PT/figures/pt_count_axis_human_vs_synthetic.png")
+OUT_DEFAULT = Path("/scratch/marzii/learning-from-preferences/pt/figures/pt_count_axis_human_vs_synthetic.png")
 
 HUMAN_C = "#1f77b4"
 SYNTH_C = "#d62728"

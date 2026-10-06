@@ -11,7 +11,7 @@
 # Phase A orchestrator: produces the 5 LunarLander HDF5 datasets PER SEED.
 # Submitted as a 5-seed job array (SLURM_ARRAY_TASK_ID -> SEED in {0..4}).
 #
-#   $SCRATCH/PT/lunarlander/seed_${SEED}/
+#   $SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/
 #       lunarlander-random-v2.hdf5         random uniform actions, 1M steps
 #       lunarlander-medium-v2.hdf5         1M deterministic rollouts of SAC@70K
 #       lunarlander-medium-replay-v2.hdf5  the SAC replay buffer at step 70K
@@ -45,7 +45,7 @@ export SDL_VIDEODRIVER=dummy
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
-DATA_DIR=${DATA_DIR:-$SCRATCH/PT/lunarlander/seed_${SEED}}
+DATA_DIR=${DATA_DIR:-$SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}}
 SAC_DIR=${SAC_DIR:-$DATA_DIR/sac_run}
 TOTAL_STEPS=${TOTAL_STEPS:-500000}
 MEDIUM_STEP=${MEDIUM_STEP:-70000}

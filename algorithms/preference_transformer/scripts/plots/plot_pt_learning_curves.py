@@ -26,8 +26,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-RUNS_ROOT = Path("/scratch/marzii/PT/lunarlander/grid_mixture_ms")
-OUT_DEFAULT = Path("/scratch/marzii/PT/figures/pt_learning_curves_human_vs_synthetic.png")
+RUNS_ROOT = Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms")
+OUT_DEFAULT = Path("/scratch/marzii/learning-from-preferences/pt/figures/pt_learning_curves_human_vs_synthetic.png")
 
 
 def parse_args():

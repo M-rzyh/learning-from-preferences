@@ -7,10 +7,10 @@ the **normal** task; blanking only degrades the *labels*.
 
 Mixture (real videos + training both use this):
 ```
-$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
+$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
 ```
 Env: `/scratch/marzii/envs/pt/bin/python`.  Videos/labels live under
-`$SCRATCH/PT/lunarlander/frame_blanking/pt_human/`.
+`$SCRATCH/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human/`.
 
 ---
 
@@ -49,9 +49,9 @@ To make a *fresh* 0% run instead:
 ```bash
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 PY=/scratch/marzii/envs/pt/bin/python
-RMIX=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
-RDIR=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2
-B=$SCRATCH/PT/lunarlander/frame_blanking/pt_human
+RMIX=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
+RDIR=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2
+B=$SCRATCH/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human
 
 $PY scripts/preference/sample_query_indices.py --hdf5 $RMIX --output_dir $B/q_0pct --num_query 100 --query_len 100 --seed 42
 $PY scripts/preference/extract_segment_videos.py --rollout_dir $RDIR --query_dir $B/q_0pct --output_dir $B/vid_0pct --num_query 100 --query_len 100
@@ -66,8 +66,8 @@ within-subject comparison (reuse `human100_mixture` as the 0% point).
 ```bash
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 PY=/scratch/marzii/envs/pt/bin/python
-RDIR=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2
-B=$SCRATCH/PT/lunarlander/frame_blanking/pt_human
+RDIR=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2
+B=$SCRATCH/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human
 QIDX=human_label/lunarlander-mixture-v2-human-s0        # existing human100 pairs
 
 $PY scripts/preference/extract_segment_videos.py --rollout_dir $RDIR --query_dir $QIDX --output_dir $B/vid_50pct_b10 --num_query 100 --query_len 100

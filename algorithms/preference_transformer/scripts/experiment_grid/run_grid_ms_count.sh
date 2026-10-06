@@ -57,14 +57,14 @@ COND_ID="${LABEL_PREFIX}-N${N_COUNT}${RUN_TAG:+-$RUN_TAG}"
 # at a subtree. Default = synthetic (the oracle count axis); human runs pass ./human_label/human.
 # Matches run_grid_ms_noise.sh, which already got this fix.
 DATA_DIR=${DATA_DIR:-./human_label/synthetic}
-DATASET=${DATASET:-$SCRATCH/PT/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5}
+DATASET=${DATASET:-$SCRATCH/learning-from-preferences/pt/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5}
 # Stage 1 saves to <logging.output_dir>/<env>/<model_type>/<comment>/s<seed>
 # (JaxPref/new_preference_reward_main.py:105-113), so output_dir MUST be pinned to the same
 # prefix CKPT_DIR uses -- otherwise stage 1 writes a flat ./reward_model/<env>/... and stage 2
 # cannot find model.pkl. Pinned explicitly below rather than trusting the flag default.
 RM_ROOT=./reward_model/${LABEL_TAG%%-*}${RUN_TAG:+/$RUN_TAG}
 CKPT_DIR=$RM_ROOT/${LABEL_TAG}/PrefTransformer/grid_ms_count/s${SEED}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/grid_mixture_ms/${COND_ID}/seed_${SEED}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/grid_mixture_ms/${COND_ID}/seed_${SEED}
 
 [[ -f "$DATASET" ]] || { echo "ERROR: $DATASET missing." 1>&2; exit 1; }
 [[ -f "${DATA_DIR}/${LABEL_TAG}/label_human" ]] || {

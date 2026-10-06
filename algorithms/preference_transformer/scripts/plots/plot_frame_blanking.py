@@ -15,8 +15,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-FB = "/scratch/marzii/PT/lunarlander/frame_blanking"
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
+FB = "/scratch/marzii/learning-from-preferences/pt/lunarlander/frame_blanking"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 

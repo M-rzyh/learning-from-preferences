@@ -31,9 +31,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pyarrow.ipc
 
-PT_BASE = "/scratch/marzii/PT/lunarlander/sim_speed"
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-DEMO_ROOT = "/scratch/marzii/imitation_runs/sim_speed/demos/human"
+PT_BASE = "/scratch/marzii/learning-from-preferences/pt/lunarlander/sim_speed"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
+DEMO_ROOT = "/scratch/marzii/learning-from-demonstrations/imitation_runs/sim_speed/demos/human"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C = "#1f77b4"          # blue   — PT
@@ -47,7 +47,7 @@ PT_CONDS = {p: f"humanspeed{p}_mixture" for p in LEVELS}
 # The flagged arm always feeds 15; the all-saved arm feeds whatever the session held.
 def _demo_dir(fps, sub):
     if fps == 20:
-        return f"/scratch/marzii/imitation_runs/lander_vanish/demos/human/vanish_p0/{sub}"
+        return f"/scratch/marzii/learning-from-demonstrations/imitation_runs/lander_vanish/demos/human/vanish_p0/{sub}"
     return f"{DEMO_ROOT}/speed_fps{fps}/{sub}"
 DEMO_DIRS = {
     "flagged": {p: _demo_dir(p, "session_1_flagged") for p in LEVELS},

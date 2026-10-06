@@ -31,7 +31,7 @@ COUNTS=(50 100 250 500 750 1000)   # <-- edit to change which counts are generat
 NSEEDS=${1:-30}; shift || true
 LAST=$((NSEEDS - 1))
 
-DATASET=$SCRATCH/PT/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5
 
 echo "Gen COUNT labels: counts=${COUNTS[*]}, seeds 0-${LAST}"
 for S in $(seq 0 "${LAST}"); do

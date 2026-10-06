@@ -12,7 +12,7 @@
 # in preparation for the rendered mixture HDF5 used by mixture-Run-B
 # labelling. Picked via env var VARIANT.
 #
-# Output: $SCRATCH/PT/lunarlander/seed_0/render/<variant>-v2/
+# Output: $SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/<variant>-v2/
 
 set -euo pipefail
 mkdir -p logs/render
@@ -32,12 +32,12 @@ cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 case "$VARIANT" in
     random) ACTOR=random ;;
-    medium) ACTOR=$SCRATCH/PT/lunarlander/seed_0/sac_run/medium/actor.zip ;;
-    expert) ACTOR=$SCRATCH/PT/lunarlander/seed_0/sac_run/expert/actor.zip ;;
+    medium) ACTOR=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/sac_run/medium/actor.zip ;;
+    expert) ACTOR=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/sac_run/expert/actor.zip ;;
     *) echo "ERROR: VARIANT must be random|medium|expert (got '$VARIANT')" 1>&2; exit 1 ;;
 esac
 
-OUT=$SCRATCH/PT/lunarlander/seed_0/render/${VARIANT}-v2-mixprep
+OUT=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/${VARIANT}-v2-mixprep
 
 python -m scripts.offline_data.rollout_with_video \
     --actor "$ACTOR" \

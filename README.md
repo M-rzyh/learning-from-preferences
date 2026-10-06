@@ -62,8 +62,14 @@ gitignored, so each fresh clone has to recreate them:
 
 ```bash
 cd algorithms/preference_transformer
-for d in human_label logs reward_model figures; do ln -s /scratch/$USER/PT/$d $d; done
+for d in human_label logs reward_model figures; do ln -s /scratch/$USER/learning-from-preferences/pt/$d $d; done
 ```
+
+Run data lives in `/scratch/$USER/learning-from-preferences/`:
+- `pt/`: offline datasets, IQL runs, reward models, logs and preference-query sets
+- `pebble/`: PEBBLE run directories, previously `compare_runs/pebble`
+
+The true-reward SAC baseline still writes to `$SCRATCH/compare_runs/sac_truereward/`.
 
 `human_label/` holds preference-query sets: segment-pair indices plus a verdict, most of them synthetic.
 Each env folder in it must contain exactly three files (see the warning above).

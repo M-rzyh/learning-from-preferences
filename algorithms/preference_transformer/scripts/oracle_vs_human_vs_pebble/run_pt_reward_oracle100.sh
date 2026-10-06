@@ -33,7 +33,7 @@ cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 # Use a distinct env-suffix so sampled indices land in their own dir and
 # do NOT clobber the existing human-labelled human_label/lunarlander-medium-v2-s0/.
 ENV_TAG=lunarlander-medium-v2-s0-oracle100
-DATASET=$SCRATCH/PT/lunarlander/seed_0/lunarlander-medium-v2.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/lunarlander-medium-v2.hdf5
 
 python -m JaxPref.new_preference_reward_main \
     --env="$ENV_TAG" \

@@ -3,8 +3,8 @@
 #SBATCH --account=aip-mtaylor3
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
-#SBATCH --output=/scratch/marzii/PT/logs/speed/%x_%j.out
-#SBATCH --error=/scratch/marzii/PT/logs/speed/%x_%j.err
+#SBATCH --output=/scratch/marzii/learning-from-preferences/pt/logs/speed/%x_%j.out
+#SBATCH --error=/scratch/marzii/learning-from-preferences/pt/logs/speed/%x_%j.err
 #
 # Build the PT SPEED-axis preference video sets: the SAME 100 clean pairs, re-timed to a
 # faster/slower playback rate. Speed is pure playback (frames are 1-per-step), so this is a
@@ -27,9 +27,9 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH; export SDL_VIDEODRIVER=dummy
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
-ROLLOUT=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2          # clean source episodes + hdf5
-SRC_Q=$SCRATCH/PT/lunarlander/frame_blanking/pt_human/queries_n350 # the clean 350 indices
-DEST_ROOT=$SCRATCH/PT/lunarlander/sim_speed/pt_human
+ROLLOUT=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2          # clean source episodes + hdf5
+SRC_Q=$SCRATCH/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human/queries_n350 # the clean 350 indices
+DEST_ROOT=$SCRATCH/learning-from-preferences/pt/lunarlander/sim_speed/pt_human
 NQ=100; QLEN=100
 
 # extract_segment_videos builds its filename from --num_query, so it wants indices_num100_q100,

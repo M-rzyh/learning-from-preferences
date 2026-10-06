@@ -12,7 +12,7 @@ These four artefacts are the inputs to `rollout_to_hdf5.py` and
 Usage
 -----
     python -m scripts.offline_data.train_sac_for_offline \
-        --save_dir $SCRATCH/PT/lunarlander/sac_run_$SLURM_JOB_ID \
+        --save_dir $SCRATCH/learning-from-preferences/pt/lunarlander/sac_run_$SLURM_JOB_ID \
         --total_steps 1000000 --medium_step 250000 --seed 0
 """
 

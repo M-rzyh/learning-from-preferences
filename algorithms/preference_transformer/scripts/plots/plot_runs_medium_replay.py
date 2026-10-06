@@ -16,16 +16,16 @@ from tensorboard.backend.event_processing.event_accumulator import EventAccumula
 
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
-ORACLE_BASE = SCRATCH / "PT/lunarlander/iql_runs/oracle100_mr"
-HUMAN_BASE  = SCRATCH / "PT/lunarlander/iql_runs/human100_mr"
-PEBBLE_BASE = SCRATCH / "PT/lunarlander/iql_runs/pebble100_mr"
+ORACLE_BASE = SCRATCH / "learning-from-preferences/pt/lunarlander/iql_runs/oracle100_mr"
+HUMAN_BASE  = SCRATCH / "learning-from-preferences/pt/lunarlander/iql_runs/human100_mr"
+PEBBLE_BASE = SCRATCH / "learning-from-preferences/pt/lunarlander/iql_runs/pebble100_mr"
 
 PEBBLE_WEB_TB_PARTS = [
-    "/scratch/marzii/compare_runs/pebble/lunarlander_web_full/4895573/seed_12345/pebble/tb",
-    "/scratch/marzii/compare_runs/pebble/lunarlander_web_full_compare/4895573/seed_12345/pebble/tb",
+    "/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/4895573/seed_12345/pebble/tb",
+    "/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full_compare/4895573/seed_12345/pebble/tb",
 ]
 PEBBLE_ORACLE_TB_DIRS = [
-    f"/scratch/marzii/compare_runs/pebble/lunarlander/{j}/pebble/tb"
+    f"/scratch/marzii/learning-from-preferences/pebble/lunarlander/{j}/pebble/tb"
     for j in (4883370, 4883371, 4883373)
 ]
 
@@ -115,7 +115,7 @@ oracle_arr_p = aggregate_seeds_on_common_x(PEBBLE_ORACLE_TB_DIRS, common_x_p)
 
 # --- medium-replay dataset baseline ---
 import h5py
-with h5py.File(SCRATCH / "PT/lunarlander/seed_0/render/medium-replay-v2/lunarlander-medium-replay-v2.hdf5", "r") as f:
+with h5py.File(SCRATCH / "learning-from-preferences/pt/lunarlander/seed_0/render/medium-replay-v2/lunarlander-medium-replay-v2.hdf5", "r") as f:
     r = f["rewards"][:]; ends = (f["terminals"][:] | f["timeouts"][:])
     cur = 0.0; ep_returns = []
     for i in range(len(r)):

@@ -26,7 +26,7 @@ export SDL_VIDEODRIVER=dummy
 
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
-DATASET=$SCRATCH/PT/lunarlander/labels/lunarlander-medium-v2/seed_0/rollout/lunarlander-medium-v2.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-v2/seed_0/rollout/lunarlander-medium-v2.hdf5
 
 python -m JaxPref.new_preference_reward_main \
     --env=lunarlander-medium-v2-s0 \

@@ -24,8 +24,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pyarrow.ipc
 
-PT_BASE = "/scratch/marzii/PT/lunarlander/frame_blanking"
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
+PT_BASE = "/scratch/marzii/learning-from-preferences/pt/lunarlander/frame_blanking"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#2ca02c"
@@ -35,9 +35,9 @@ LEVELS = [0, 25, 50, 75]
 PT_CONDS = {0: "humanblock0_mixture"}
 PT_CONDS.update({p: f"humanblock5p{p}_mixture" for p in (25, 50, 75)})
 
-DEMO_DIRS = {0: "/scratch/marzii/imitation_runs/human_demos/lunarlander/session_2"}
+DEMO_DIRS = {0: "/scratch/marzii/learning-from-demonstrations/imitation_runs/human_demos/lunarlander/session_2"}
 DEMO_DIRS.update({
-    p: f"/scratch/marzii/imitation_runs/frame_blanking/demos/human/blank5_p{p}/session_1_flagged"
+    p: f"/scratch/marzii/learning-from-demonstrations/imitation_runs/frame_blanking/demos/human/blank5_p{p}/session_1_flagged"
     for p in (25, 50, 75)
 })
 

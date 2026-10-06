@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-B = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
+B = "/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms"
 NS_DEFAULT = [10, 50, 100, 750, 1000]
 # ColorBrewer Blues, 5 steps, monotone lightness: light = few preferences, dark = many
 COLORS = ["#6baed6", "#4292c6", "#2171b5", "#08519c", "#08306b"]

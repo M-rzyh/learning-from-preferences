@@ -19,7 +19,7 @@ REWARD_UPDATE=${REWARD_UPDATE:-50}
 
 # for seed in 12345 23451 78906 89067 6789; do
 for seed in ${SEEDS:-12345}; do
-  PARENT_RUN_DIR="$SCRATCH/compare_runs/pebble/lunarlander_web_full/${SLURM_JOB_ID}"
+  PARENT_RUN_DIR="$SCRATCH/learning-from-preferences/pebble/lunarlander_web_full/${SLURM_JOB_ID}"
   export COMPARE_RUN_DIR="$PARENT_RUN_DIR/seed_${seed}"
     mkdir -p "$COMPARE_RUN_DIR"
     echo "COMPARE_RUN_DIR=$COMPARE_RUN_DIR"

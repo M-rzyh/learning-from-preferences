@@ -3,7 +3,7 @@
 #
 # Takes ONE existing clean preference clip and re-times it to a ladder of speeds so
 # a human can see where judging gets easy / hard. Nothing existing is touched;
-# everything lands in $SCRATCH/PT/lunarlander/speed_demo/ (isolated sibling dir).
+# everything lands in $SCRATCH/learning-from-preferences/pt/lunarlander/speed_demo/ (isolated sibling dir).
 #
 # KEY FACT (measured, not assumed): the source clip is 600x400, 20 fps, 100 frames,
 # 5.000 s. Each frame is ONE physics step (LunarLander FPS=50, dt=20 ms), so those
@@ -18,8 +18,8 @@
 #               time. Lossy: the human literally never sees the dropped steps.
 set -euo pipefail
 
-SRC=${SRC:-$SCRATCH/PT/lunarlander/frame_blanking/pt_human/videos_human_n350_clean/batch_000/pair_000/seg_A.mp4}
-OUT=${OUT:-$SCRATCH/PT/lunarlander/speed_demo}
+SRC=${SRC:-$SCRATCH/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human/videos_human_n350_clean/batch_000/pair_000/seg_A.mp4}
+OUT=${OUT:-$SCRATCH/learning-from-preferences/pt/lunarlander/speed_demo}
 SRC_FPS=20   # measured with ffprobe
 
 [[ -f "$SRC" ]] || { echo "ERROR: source clip missing: $SRC" 1>&2; exit 1; }

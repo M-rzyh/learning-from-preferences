@@ -26,10 +26,10 @@ from pathlib import Path
 
 import numpy as np
 
-LABEL_ROOT = Path("/scratch/marzii/PT/human_label")
+LABEL_ROOT = Path("/scratch/marzii/learning-from-preferences/pt/human_label")
 SRC = "lunarlander-mixture-v2-humanblock0-s0"          # clean human labels, N=350
 DST_FMT = "lunarlander-mixture-v2-humanvanish0-s{}"
-VANISH_SET = Path("/scratch/marzii/PT/lunarlander/lander_vanish/pt_human"
+VANISH_SET = Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/lander_vanish/pt_human"
                   "/videos_human_n100_vanish25/batch_000/metadata.pkl")
 N, QLEN, SEEDS = 100, 100, 10
 

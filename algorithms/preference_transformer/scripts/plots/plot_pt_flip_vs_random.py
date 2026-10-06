@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
-GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
+GRID_ROOT_MS = SCRATCH / "learning-from-preferences/pt/lunarlander/grid_mixture_ms"
 FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 

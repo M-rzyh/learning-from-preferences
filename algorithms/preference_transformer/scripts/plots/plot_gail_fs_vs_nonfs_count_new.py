@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 EVAL_RUN_LIST      = "/home/marzii/learning-from-demonstrations/experiments/eval_run_list.txt"
 GAIL_CSV_COUNT     = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
 GAIL_CSV_COUNT_FS  = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_FS_2026-06-18.csv"
-GAIL_BASE          = Path("/scratch/marzii/imitation_runs/gail/lunarlander")
+GAIL_BASE          = Path("/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander")
 FIG_DIR            = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 

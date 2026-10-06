@@ -44,7 +44,7 @@ This is exactly the PT-indirect / GAIL-direct split in the notes, and it drives 
 ## Axis 3 — Simulation speed (harder = faster, easier = slower)
 
 **MEASURED, not assumed** (`scripts/preference/gen_speed_examples.sh`, clips in
-`$SCRATCH/PT/lunarlander/speed_demo/`). Source clip: 600×400, **20 fps, 100 frames, 5.000 s**.
+`$SCRATCH/learning-from-preferences/pt/lunarlander/speed_demo/`). Source clip: 600×400, **20 fps, 100 frames, 5.000 s**.
 
 ### The baseline is not 1×
 

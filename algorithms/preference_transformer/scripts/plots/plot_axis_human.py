@@ -19,14 +19,14 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import pyarrow.ipc
 
-GAIL_RUNS = "/scratch/marzii/imitation_runs/gail/lunarlander"
+GAIL_RUNS = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C = "#1f77b4"          # PT preferences
 ALL_C = "#b30000"         # GAIL all-saved — the HEADLINE arm (bold solid)
 FLAG_C = "#d62728"        # GAIL flagged (dashed)
 F15_C = "#ff7f0e"         # GAIL first-15 (dashed)
-CLEAN350 = "/scratch/marzii/PT/lunarlander/frame_blanking/pt_human/labels_n350_clean.pkl"
+CLEAN350 = "/scratch/marzii/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human/labels_n350_clean.pkl"
 PT_CAP_S = 30             # cap per-pair labelling time: drops idle gaps (page left open),
                           # keeps genuine deliberation. Without it a few 100-240s idle pairs
                           # inflate the total (e.g. vanish25 22->~11 min).
@@ -36,37 +36,37 @@ PT_CAP_S = 30             # cap per-pair labelling time: drops idle gaps (page l
 def cfg_vanish():
     return dict(
         name="Lander vanishing", xlabel="Lander hidden (%)", levels=[0, 25, 50, 75],
-        gail_levels=[0, 25, 50, 75], pt_base="/scratch/marzii/PT/lunarlander/lander_vanish",
+        gail_levels=[0, 25, 50, 75], pt_base="/scratch/marzii/learning-from-preferences/pt/lunarlander/lander_vanish",
         pt_cond=lambda p: f"humanvanish{p}_mixture", lvl_col="vanish_pct",
         csv_glob=f"{EXP}/gail_lander_vanish_human_*.csv",
-        demo_dir=lambda p: f"/scratch/marzii/imitation_runs/lander_vanish/demos/human/vanish_p{p}",
+        demo_dir=lambda p: f"/scratch/marzii/learning-from-demonstrations/imitation_runs/lander_vanish/demos/human/vanish_p{p}",
         pt_labels=lambda p: ("clean100" if p == 0 else
-            f"/scratch/marzii/PT/lunarlander/lander_vanish/pt_human/labels_n100_vanish{p}.pkl"))
+            f"/scratch/marzii/learning-from-preferences/pt/lunarlander/lander_vanish/pt_human/labels_n100_vanish{p}.pkl"))
 
 def cfg_speed():
-    vp0 = "/scratch/marzii/imitation_runs/lander_vanish/demos/human/vanish_p0"
+    vp0 = "/scratch/marzii/learning-from-demonstrations/imitation_runs/lander_vanish/demos/human/vanish_p0"
     return dict(
         name="Simulation speed", xlabel="Playback speed (fps): 10=0.2x 20=0.4x 50=1.0x realtime",
         levels=[10, 20, 50], gail_levels=[10, 20, 50],
-        pt_base="/scratch/marzii/PT/lunarlander/sim_speed",
+        pt_base="/scratch/marzii/learning-from-preferences/pt/lunarlander/sim_speed",
         pt_cond=lambda p: f"humanspeed{p}_mixture", lvl_col="speed_fps",
         csv_glob=f"{EXP}/gail_lander_speed_human_*.csv",
         demo_dir=lambda p: (vp0 if p == 20 else
-            f"/scratch/marzii/imitation_runs/sim_speed/demos/human/speed_fps{p}"),
+            f"/scratch/marzii/learning-from-demonstrations/imitation_runs/sim_speed/demos/human/speed_fps{p}"),
         pt_labels=lambda p: ("clean100" if p == 20 else   # 20fps reuses vanish-0 = clean-100
-            f"/scratch/marzii/PT/lunarlander/sim_speed/pt_human/labels_n100_speed{p}.pkl"))
+            f"/scratch/marzii/learning-from-preferences/pt/lunarlander/sim_speed/pt_human/labels_n100_speed{p}.pkl"))
 
 def cfg_delay():
-    vp0 = "/scratch/marzii/imitation_runs/lander_vanish/demos/human/vanish_p0"
+    vp0 = "/scratch/marzii/learning-from-demonstrations/imitation_runs/lander_vanish/demos/human/vanish_p0"
     return dict(
         name="Action delay", xlabel="Action delay k (steps): k*20 ms game time",
         levels=[0, 5, 10, 20], gail_levels=[0, 5, 10],   # k=20 is PT-only
-        pt_base="/scratch/marzii/PT/lunarlander/action_delay",
+        pt_base="/scratch/marzii/learning-from-preferences/pt/lunarlander/action_delay",
         pt_cond=lambda p: f"humandelay{p}_mixture", lvl_col="delay_k",
         csv_glob=f"{EXP}/gail_lander_delay_human_*.csv",
         demo_dir=lambda p: (vp0 if p == 0 else
-            f"/scratch/marzii/imitation_runs/action_delay/demos/human/delay_k{p}"),
-        pt_labels=lambda p: f"/scratch/marzii/PT/lunarlander/action_delay/pt_human/labels_n100_delay{p}.pkl")
+            f"/scratch/marzii/learning-from-demonstrations/imitation_runs/action_delay/demos/human/delay_k{p}"),
+        pt_labels=lambda p: f"/scratch/marzii/learning-from-preferences/pt/lunarlander/action_delay/pt_human/labels_n100_delay{p}.pkl")
 
 CFG = {"vanish": cfg_vanish, "speed": cfg_speed, "delay": cfg_delay}
 

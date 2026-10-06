@@ -15,9 +15,9 @@ For each pair (start_a, start_b) drawn from `indices_num{N}_q{L}` /
 Usage
 -----
     python -m scripts.preference.extract_segment_videos \
-        --rollout_dir $SCRATCH/PT/lunarlander/labels/lunarlander-medium-v2/seed_0/rollout \
+        --rollout_dir $SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-v2/seed_0/rollout \
         --query_dir   human_label/lunarlander-medium-v2/seed_0/queries \
-        --output_dir  $SCRATCH/PT/lunarlander/labels/lunarlander-medium-v2/seed_0/videos \
+        --output_dir  $SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-v2/seed_0/videos \
         --num_query 10 --query_len 100
 """
 

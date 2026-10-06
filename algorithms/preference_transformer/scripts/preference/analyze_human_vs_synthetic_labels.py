@@ -46,20 +46,20 @@ def parse_args():
     # Human label folders, e.g.
     # root/prefix-N100-s0/
     p.add_argument("--human_root", type=Path,
-               default=Path("/scratch/marzii/PT/human_label/human"),
+               default=Path("/scratch/marzii/learning-from-preferences/pt/human_label/human"),
     )
     
     p.add_argument(
         "--dataset",
         type=Path,
-        default=Path("/scratch/marzii/PT/lunarlander/seed_0/render/mixture-v2/"
+        default=Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2/"
                      "lunarlander-mixture-v2.hdf5"),
     )
     
     p.add_argument("--human_prefix", default="lunarlander-human-count-v2")
 
     p.add_argument("--out_csv", type=Path,
-                default=Path("/scratch/marzii/PT/analysis/human_vs_synthetic/pt_human_synthetic_agreement.csv"),
+                default=Path("/scratch/marzii/learning-from-preferences/pt/analysis/human_vs_synthetic/pt_human_synthetic_agreement.csv"),
     )
 
     # Change these if the stored label filenames differ.

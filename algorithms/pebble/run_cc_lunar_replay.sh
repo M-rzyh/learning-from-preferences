@@ -13,7 +13,7 @@
 # then auto-checkpoints when max_feedback is hit and exits.
 #
 # Usage:
-#   REPLAY_DIR=/scratch/marzii/compare_runs/pebble/lunarlander_web/<JOBID>/seed_<SEED>/online_queries \
+#   REPLAY_DIR=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web/<JOBID>/seed_<SEED>/online_queries \
 #     sbatch run_cc_lunar_replay.sh
 
 set -e
@@ -33,7 +33,7 @@ SEED=${SEED:-12345}
 
 # By default the new run writes to .../recovered_<JOBID>/seed_<SEED>
 # (same env-name root, fresh JOBID so old run is untouched)
-PARENT_RUN_DIR=${PARENT_RUN_DIR:-"$SCRATCH/compare_runs/pebble/lunarlander_web/recovered_${SLURM_JOB_ID}"}
+PARENT_RUN_DIR=${PARENT_RUN_DIR:-"$SCRATCH/learning-from-preferences/pebble/lunarlander_web/recovered_${SLURM_JOB_ID}"}
 export COMPARE_RUN_DIR="$PARENT_RUN_DIR/seed_${SEED}"
 mkdir -p "$COMPARE_RUN_DIR"
 

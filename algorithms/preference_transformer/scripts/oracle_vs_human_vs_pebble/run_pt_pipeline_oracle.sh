@@ -38,9 +38,9 @@ cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
 ENV_TAG=lunarlander-medium-v2-oracle-s${SEED}
-DATASET=$SCRATCH/PT/lunarlander/seed_${SEED}/lunarlander-medium-v2.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/lunarlander-medium-v2.hdf5
 CKPT_DIR=./reward_model/${ENV_TAG%%-*}/${ENV_TAG}/PrefTransformer/oracle100/s${SEED}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/iql_runs/oracle100/seed_${SEED}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/iql_runs/oracle100/seed_${SEED}
 
 if [ ! -f "$DATASET" ]; then
     echo "ERROR: $DATASET missing — Phase A must have produced this." 1>&2

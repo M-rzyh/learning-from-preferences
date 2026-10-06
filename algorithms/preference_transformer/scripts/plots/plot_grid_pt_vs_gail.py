@@ -24,12 +24,12 @@ import pyarrow.ipc
 
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
-GRID_ROOT = SCRATCH / "PT/lunarlander/grid_mixture"
-GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
+GRID_ROOT = SCRATCH / "learning-from-preferences/pt/lunarlander/grid_mixture"
+GRID_ROOT_MS = SCRATCH / "learning-from-preferences/pt/lunarlander/grid_mixture_ms"
 GAIL_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_2026-05-12.csv"
 GAIL_COUNT_CSV_NEW = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
 GAIL_NOISE_CSV_NEW = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_2026-06-18.csv"
-GAIL_BASE = Path("/scratch/marzii/imitation_runs/gail/lunarlander")
+GAIL_BASE = Path("/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander")
 FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -117,8 +117,8 @@ def agg(rows: list[float]):
 def load_gail_demo_returns(noise_pcts):
     """Mean cumulative return of the demonstration trajectories at each noise level.
     0% uses the shared clean pool; other levels average across all 30 per-seed pools."""
-    DEMO_CLEAN = Path("/scratch/marzii/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean")
-    DEMO_NOISY = Path("/scratch/marzii/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187")
+    DEMO_CLEAN = Path("/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean")
+    DEMO_NOISY = Path("/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187")
     result = {}
     for pct in [0] + list(noise_pcts):
         dirs = [DEMO_CLEAN] if pct == 0 else [

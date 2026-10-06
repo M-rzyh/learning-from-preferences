@@ -15,7 +15,7 @@ Run from the repo root with the pt env, e.g.:
 
   # a single run dir:
   python -m scripts.experiment_grid.eval_saved_policy_pt \
-      --run_dir /scratch/marzii/PT/lunarlander/grid_mixture_ms/<cond>/seed_0
+      --run_dir /scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms/<cond>/seed_0
 """
 import argparse
 import json
@@ -27,7 +27,7 @@ import numpy as np
 import wrappers
 from learner import Learner
 
-RUNS_ROOT = Path("/scratch/marzii/PT/lunarlander/grid_mixture_ms")
+RUNS_ROOT = Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms")
 
 
 def parse_args():

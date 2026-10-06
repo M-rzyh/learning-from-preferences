@@ -19,7 +19,7 @@ Skipped pairs are dropped. M = number of labelled (non-None) pairs.
 Usage
 -----
     python -m scripts.preference.labels_web_to_pt_format \
-        --labels $SCRATCH/PT/lunarlander/labels/lunarlander-medium-replay-v2/seed_0/labels.pkl \
+        --labels $SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-replay-v2/seed_0/labels.pkl \
         --output_dir human_label/lunarlander-medium-replay-v2/seed_0
 """
 

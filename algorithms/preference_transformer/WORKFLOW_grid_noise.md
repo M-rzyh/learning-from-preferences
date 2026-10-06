@@ -36,7 +36,7 @@ One array job per noise level (array index = seed).
     sbatch --array=0-29 --export=ALL,N_COUNT=250 \
         scripts/experiment_grid/run_grid_ms_count.sh
 
-Results land in: `$SCRATCH/PT/lunarlander/grid_mixture_ms/<COND_ID>/seed_*/`
+Results land in: `$SCRATCH/learning-from-preferences/pt/lunarlander/grid_mixture_ms/<COND_ID>/seed_*/`
 
 ## Step 3 — plot  (CPU, seconds)
 

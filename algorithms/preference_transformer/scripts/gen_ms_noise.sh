@@ -41,7 +41,7 @@ LEVELS=("$@")
 [ ${#LEVELS[@]} -eq 0 ] && LEVELS=(0 10 20 30 40 50 60 70 80 90 100)
 LAST=$((NSEEDS - 1))
 
-DATASET=$SCRATCH/PT/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5
 
 echo "Gen NOISE labels: mode=$MODE, N=$N, seeds 0-${LAST}, levels: ${LEVELS[*]}"
 for S in $(seq 0 "${LAST}"); do

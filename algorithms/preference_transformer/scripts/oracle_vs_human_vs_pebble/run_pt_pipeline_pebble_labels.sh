@@ -15,7 +15,7 @@
 #   - first 25 = oracle teacher  (scripted in PEBBLE)
 #   - next  75 = human teacher   (web labels from BPref3 label_web.py)
 # Built by scripts/preference/build_pebble_pt_dataset.py into:
-#   $SCRATCH/PT/lunarlander/pebble_labels/lunarlander-pebble100-s0.hdf5
+#   $SCRATCH/learning-from-preferences/pt/lunarlander/pebble_labels/lunarlander-pebble100-s0.hdf5
 #   human_label/lunarlander-pebble100-s0/{indices_num100_q50,
 #                                          indices_2_num100_q50,
 #                                          label_human, provenance.json}
@@ -39,10 +39,10 @@ cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-0}
 ENV_TAG=lunarlander-pebble100-s${SEED}
-SYNTHETIC=$SCRATCH/PT/lunarlander/pebble_labels/${ENV_TAG}.hdf5
-IQL_DATASET=$SCRATCH/PT/lunarlander/seed_${SEED}/lunarlander-medium-v2.hdf5
+SYNTHETIC=$SCRATCH/learning-from-preferences/pt/lunarlander/pebble_labels/${ENV_TAG}.hdf5
+IQL_DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/lunarlander-medium-v2.hdf5
 CKPT_DIR=./reward_model/${ENV_TAG%%-*}/${ENV_TAG}/PrefTransformer/pebble100/s${SEED}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/iql_runs/pebble100/seed_${SEED}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/iql_runs/pebble100/seed_${SEED}
 
 for f in "$SYNTHETIC" "$IQL_DATASET"; do
     if [ ! -f "$f" ]; then

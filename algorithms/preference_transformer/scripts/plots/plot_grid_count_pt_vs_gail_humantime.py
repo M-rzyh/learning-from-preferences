@@ -19,9 +19,9 @@ import numpy as np
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 GAIL_CSV = "/home/marzii/learning-from-demonstrations/experiments/GAIL/gail_grid_count_2026-06-18.csv"
-MS = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
+MS = "/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms"
 DEMO_SEC, PAIR_SEC = 11.431, 9.074          # measured means; see docstring
 GAIL_C, PT_C = "#2ca02c", "#1f77b4"
 

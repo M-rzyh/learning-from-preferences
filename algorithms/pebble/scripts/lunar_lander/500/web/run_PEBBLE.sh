@@ -2,7 +2,7 @@
 for seed in 12345; do
   # Per-seed subdir so each seed has its own online_queries/. label_web.py
   # walks the parent dir recursively to find batches across seeds.
-  PARENT_RUN_DIR="$SCRATCH/compare_runs/pebble/lunarlander_web/${SLURM_JOB_ID}"
+  PARENT_RUN_DIR="$SCRATCH/learning-from-preferences/pebble/lunarlander_web/${SLURM_JOB_ID}"
   export COMPARE_RUN_DIR="$PARENT_RUN_DIR/seed_${seed}"
     mkdir -p "$COMPARE_RUN_DIR"
     echo "COMPARE_RUN_DIR=$COMPARE_RUN_DIR"

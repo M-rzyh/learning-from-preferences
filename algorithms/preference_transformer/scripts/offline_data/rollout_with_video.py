@@ -19,8 +19,8 @@ seg_A.mp4 / seg_B.mp4 pairs the labeller consumes.
 Usage
 -----
     python -m scripts.offline_data.rollout_with_video \
-        --actor $SCRATCH/PT/lunarlander/seed_0/sac_run/medium/actor.zip \
-        --output_dir $SCRATCH/PT/lunarlander/labels/lunarlander-medium-v2/seed_0/rollout \
+        --actor $SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/sac_run/medium/actor.zip \
+        --output_dir $SCRATCH/learning-from-preferences/pt/lunarlander/labels/lunarlander-medium-v2/seed_0/rollout \
         --num_steps 100000 --fps 20 --seed 0
 """
 

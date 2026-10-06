@@ -39,7 +39,7 @@ from blank_lander_videos import HULL, blanked_frames  # noqa: E402  (same-dir he
 
 MIN_BLOB = 5       # a few-px fleck is encoder ringing; a real remnant is a cluster (12+ px)
 
-ROOT = Path("/scratch/marzii/PT/lunarlander/lander_vanish/pt_human")
+ROOT = Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/lander_vanish/pt_human")
 LEVELS = [25, 50, 75]
 N, QLEN, BLOCK, SEED = 100, 100, 5, 0
 SAMPLE_PAIRS = 12          # clips are ~identical in kind; a sample catches systematic faults

@@ -27,8 +27,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
-GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
-GAIL_BASE = SCRATCH / "imitation_runs/gail/lunarlander"
+GRID_ROOT_MS = SCRATCH / "learning-from-preferences/pt/lunarlander/grid_mixture_ms"
+GAIL_BASE = SCRATCH / "learning-from-demonstrations/imitation_runs/gail/lunarlander"
 GAIL_COUNT_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
 FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)

@@ -3,10 +3,10 @@
 Usage
 -----
     python -m scripts.offline_data.concat_hdf5 \
-        --inputs $SCRATCH/PT/lunarlander/lunarlander-medium-v2.hdf5 \
-                 $SCRATCH/PT/lunarlander/lunarlander-expert-v2.hdf5 \
+        --inputs $SCRATCH/learning-from-preferences/pt/lunarlander/lunarlander-medium-v2.hdf5 \
+                 $SCRATCH/learning-from-preferences/pt/lunarlander/lunarlander-expert-v2.hdf5 \
         --num_each 500000 \
-        --output $SCRATCH/PT/lunarlander/lunarlander-medium-expert-v2.hdf5
+        --output $SCRATCH/learning-from-preferences/pt/lunarlander/lunarlander-medium-expert-v2.hdf5
 
 Behavior:
     - Slices the first `num_each` transitions from each input (in input order).

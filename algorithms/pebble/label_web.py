@@ -3,7 +3,7 @@
 Web-based human preference labeling for PEBBLE segment videos.
 
 Usage:
-    python label_web.py --query_dir /scratch/marzii/compare_runs/pebble/lunarlander/JOBID/query_videos \
+    python label_web.py --query_dir /scratch/marzii/learning-from-preferences/pebble/lunarlander/JOBID/query_videos \
                         --output human_labels.pkl \
                         --port 8080
 

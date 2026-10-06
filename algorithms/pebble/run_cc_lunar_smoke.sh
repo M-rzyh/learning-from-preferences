@@ -34,7 +34,7 @@ mkdir -p logs/lunarlander
 cd ~/learning-from-preferences/algorithms/pebble
 
 SEED=12345
-SMOKE_ROOT="$SCRATCH/compare_runs/pebble/lunarlander_smoke/${SLURM_JOB_ID}"
+SMOKE_ROOT="$SCRATCH/learning-from-preferences/pebble/lunarlander_smoke/${SLURM_JOB_ID}"
 UNIFIED_DIR="$SMOKE_ROOT/unified/seed_${SEED}"
 COMPARE_DIR="$SMOKE_ROOT/compare/seed_${SEED}"
 

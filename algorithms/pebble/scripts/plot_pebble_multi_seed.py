@@ -22,7 +22,7 @@ import numpy as np
 import pandas as pd
 
 
-DEFAULT_PEBBLE_ROOT = "/scratch/marzii/compare_runs/pebble/lunarlander"
+DEFAULT_PEBBLE_ROOT = "/scratch/marzii/learning-from-preferences/pebble/lunarlander"
 
 
 def find_train_csv(job_id, root):

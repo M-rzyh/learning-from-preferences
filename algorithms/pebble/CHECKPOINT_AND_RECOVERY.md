@@ -13,7 +13,7 @@ Both written via `tmp + rename`, so a kill mid-write never leaves a partial file
 ## Resuming pure RL from a checkpoint
 
 ```bash
-RESUME_FROM=/scratch/marzii/compare_runs/pebble/lunarlander_web/<JOB>/seed_<SEED>/pebble/checkpoint.pt \
+RESUME_FROM=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web/<JOB>/seed_<SEED>/pebble/checkpoint.pt \
   sbatch run_cc_lunar_resume.sh
 ```
 
@@ -24,7 +24,7 @@ Continues the same `train.csv`, `eval.csv`, and TensorBoard `tb/` directory (app
 If a run died **after** you finished labeling but **before** the checkpoint succeeded (e.g. OOM during `torch.save`), the labels are still on disk in `online_queries/batch_*/response.pkl`. Recover with:
 
 ```bash
-REPLAY_DIR=/scratch/marzii/compare_runs/pebble/lunarlander_web/<OLD_JOB>/seed_<SEED>/online_queries \
+REPLAY_DIR=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web/<OLD_JOB>/seed_<SEED>/online_queries \
   sbatch run_cc_lunar_replay.sh
 ```
 

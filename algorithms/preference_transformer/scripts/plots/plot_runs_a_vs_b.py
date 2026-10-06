@@ -20,22 +20,22 @@ from tensorboard.backend.event_processing.event_accumulator import EventAccumula
 
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
-ORACLE_BASE = SCRATCH / "PT/lunarlander/iql_runs/oracle100"
-HUMAN_BASE = SCRATCH / "PT/lunarlander/iql_runs/human100"
-PEBBLE_PT_BASE = SCRATCH / "PT/lunarlander/iql_runs/pebble100"
+ORACLE_BASE = SCRATCH / "learning-from-preferences/pt/lunarlander/iql_runs/oracle100"
+HUMAN_BASE = SCRATCH / "learning-from-preferences/pt/lunarlander/iql_runs/human100"
+PEBBLE_PT_BASE = SCRATCH / "learning-from-preferences/pt/lunarlander/iql_runs/pebble100"
 
 # PEBBLE web run: stitch original 4895573 (steps 0..~74K = preference-based
 # PEBBLE training) + resumed 4895915 (steps 70K..1M = pure online RL).
 PEBBLE_WEB_TB_PARTS = [
-    "/scratch/marzii/compare_runs/pebble/lunarlander_web_full/4895573/seed_12345/pebble/tb",
-    "/scratch/marzii/compare_runs/pebble/lunarlander_web_full_compare/4895573/seed_12345/pebble/tb",
+    "/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/4895573/seed_12345/pebble/tb",
+    "/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full_compare/4895573/seed_12345/pebble/tb",
 ]
 
 # PEBBLE-oracle multi-seed (max_feedback=100, scripted teacher).
 # Only seeds {370, 371, 373} reached 1M steps; 372 and 374 stopped at
 # 250K and 10K respectively, so they're excluded from the band.
 PEBBLE_ORACLE_TB_DIRS = [
-    f"/scratch/marzii/compare_runs/pebble/lunarlander/{j}/pebble/tb"
+    f"/scratch/marzii/learning-from-preferences/pebble/lunarlander/{j}/pebble/tb"
     for j in (4883370, 4883371, 4883373)
 ]
 

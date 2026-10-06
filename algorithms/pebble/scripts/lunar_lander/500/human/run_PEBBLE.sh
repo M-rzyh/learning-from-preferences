@@ -1,7 +1,7 @@
-HUMAN_LABELS=${HUMAN_LABELS_PATH:-/scratch/marzii/compare_runs/pebble/lunarlander/4624956/human_labels.pkl}
+HUMAN_LABELS=${HUMAN_LABELS_PATH:-/scratch/marzii/learning-from-preferences/pebble/lunarlander/4624956/human_labels.pkl}
 
 for seed in 12345; do
-  export COMPARE_RUN_DIR="$SCRATCH/compare_runs/pebble/lunarlander_human/${SLURM_JOB_ID}"
+  export COMPARE_RUN_DIR="$SCRATCH/learning-from-preferences/pebble/lunarlander_human/${SLURM_JOB_ID}"
     mkdir -p "$COMPARE_RUN_DIR"
     echo "COMPARE_RUN_DIR=$COMPARE_RUN_DIR"
     echo "HUMAN_LABELS=$HUMAN_LABELS"

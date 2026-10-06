@@ -92,7 +92,7 @@ The user explicitly drew a line:
 Do **NOT** mix PT code into `BPref3` (PEBBLE) or `IRL3` (GAIL).
 
 - PT-related Python scripts → `/home/marzii/learning-from-preferences/algorithms/preference_transformer/scripts/` (or sibling dirs).
-- PT-related data (the 5 LunarLander HDF5 files) → `$SCRATCH/PT/lunarlander/` (separate from `$SCRATCH/compare_runs/pebble/...`).
+- PT-related data (the 5 LunarLander HDF5 files) → `$SCRATCH/learning-from-preferences/pt/lunarlander/` (separate from `$SCRATCH/learning-from-preferences/pebble/...`).
 - Comparison plots may live under `$SCRATCH/compare_runs/` since they cross-cut, but their source data must come from the PT workspace.
 
 This is also saved as a memory:
@@ -226,11 +226,11 @@ Recommended files to create (all under `/home/marzii/learning-from-preferences/a
 - `scripts/offline_data/concat_hdf5.py` — concatenates two HDF5 files (for
   medium-expert variant).
 - `scripts/offline_data/make_all_variants.sh` — orchestrator that produces
-  all 5 files into `$SCRATCH/PT/lunarlander/`.
+  all 5 files into `$SCRATCH/learning-from-preferences/pt/lunarlander/`.
 
 Output:
 ```
-$SCRATCH/PT/lunarlander/
+$SCRATCH/learning-from-preferences/pt/lunarlander/
     lunarlander-random-v2.hdf5        (random uniform actions)
     lunarlander-medium-v2.hdf5        (1M steps from SAC-medium)
     lunarlander-medium-replay-v2.hdf5 (replay buffer at medium)

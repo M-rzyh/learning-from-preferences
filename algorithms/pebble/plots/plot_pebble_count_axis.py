@@ -30,8 +30,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = Path("/scratch/marzii/compare_runs")
-OUT_DEFAULT = Path("/scratch/marzii/compare_runs/pebble/figures/"
+ROOT = Path("/scratch/marzii/compare_runs")  # sac_truereward baseline (not migrated)
+PEBBLE_ROOT = Path("/scratch/marzii/learning-from-preferences/pebble")
+OUT_DEFAULT = Path("/scratch/marzii/learning-from-preferences/pebble/figures/"
                    "pebble_count_axis_human_vs_synthetic.png")
 
 HUMAN_C = "#1f77b4"
@@ -42,8 +43,8 @@ BASE_C = "#555555"
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--synthetic_root", type=Path, default=ROOT / "pebble/lunarlander")
-    p.add_argument("--human_root", type=Path, default=ROOT / "pebble/lunarlander_web_full")
+    p.add_argument("--synthetic_root", type=Path, default=PEBBLE_ROOT / "lunarlander")
+    p.add_argument("--human_root", type=Path, default=PEBBLE_ROOT / "lunarlander_web_full")
     p.add_argument("--baseline_root", type=Path, default=ROOT / "sac_truereward/lunarlander",
                    help="true-reward SAC runs; drawn as a horizontal band")
     p.add_argument("--no_baseline", action="store_true")

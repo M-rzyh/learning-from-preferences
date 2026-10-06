@@ -30,8 +30,8 @@ import numpy as np
 import pyarrow.ipc
 
 SCRATCH = Path(os.environ.get("SCRATCH", "/scratch/marzii"))
-GRID_ROOT_MS = SCRATCH / "PT/lunarlander/grid_mixture_ms"
-GAIL_BASE = Path("/scratch/marzii/imitation_runs/gail/lunarlander")
+GRID_ROOT_MS = SCRATCH / "learning-from-preferences/pt/lunarlander/grid_mixture_ms"
+GAIL_BASE = Path("/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander")
 GAIL_NOISE_OLD = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_noise_2026-06-18.csv"   # coin_uniform (N=100)
 GAIL_COUNT_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"   # count_N100 = 0% baseline
 FIG_DIR = Path("/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures")
@@ -137,9 +137,9 @@ def shadow(ax, x, y, color, label):
 
 
 # ── GAIL demonstration returns (printed on the GAIL coin points, as in grid_noise) ──
-_NONFS = "/scratch/marzii/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
-_CLEAN = "/scratch/marzii/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean"
-_COIN_EXCLUDE = "/scratch/marzii/imitation_runs/noise_variants/demos/coin_exclude"
+_NONFS = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
+_CLEAN = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean"
+_COIN_EXCLUDE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noise_variants/demos/coin_exclude"
 
 
 def _pool_return(d):

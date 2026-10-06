@@ -11,8 +11,8 @@ Sampling is at the TRAJECTORY level (not per-transition), so PT can still
 draw contiguous `query_len` segments without crossing episode boundaries.
 
 Output:
-    $SCRATCH/PT/lunarlander/mixture/lunarlander-mixture-v2-s{SEED}.hdf5
-    $SCRATCH/PT/lunarlander/mixture/lunarlander-mixture-v2-s{SEED}.metadata.json
+    $SCRATCH/learning-from-preferences/pt/lunarlander/mixture/lunarlander-mixture-v2-s{SEED}.hdf5
+    $SCRATCH/learning-from-preferences/pt/lunarlander/mixture/lunarlander-mixture-v2-s{SEED}.metadata.json
 """
 
 from __future__ import annotations
@@ -34,7 +34,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--seed", type=int, default=0,
                    help="Which source-seed's HDF5s to draw from (default 0).")
     p.add_argument("--out_dir", type=Path,
-                   default=Path(os.environ.get("SCRATCH", "/scratch/marzii")) / "PT/lunarlander/mixture")
+                   default=Path(os.environ.get("SCRATCH", "/scratch/marzii")) / "learning-from-preferences/pt/lunarlander/mixture")
     p.add_argument("--mix_seed", type=int, default=0,
                    help="RNG seed for trajectory sampling.")
     p.add_argument("--total_target", type=int, default=1_000_000)
@@ -89,7 +89,7 @@ def main() -> None:
 
     # Total = 1M. medium-replay takes whatever it has (~70K). The remaining
     # budget is split equally across the 4 non-mr variants.
-    mr_src = scratch / f"PT/lunarlander/seed_{args.seed}/lunarlander-medium-replay-v2.hdf5"
+    mr_src = scratch / f"learning-from-preferences/pt/lunarlander/seed_{args.seed}/lunarlander-medium-replay-v2.hdf5"
     with h5py.File(mr_src, "r") as f:
         mr_size = f["rewards"].shape[0]
     non_mr_target_per = (args.total_target - mr_size) // 4
@@ -102,7 +102,7 @@ def main() -> None:
     chunks: dict[str, dict[str, np.ndarray]] = {}
     chosen_meta: list[dict] = []
     for v in VARIANT_NAMES:
-        src = scratch / f"PT/lunarlander/seed_{args.seed}/lunarlander-{v}-v2.hdf5"
+        src = scratch / f"learning-from-preferences/pt/lunarlander/seed_{args.seed}/lunarlander-{v}-v2.hdf5"
         print(f"[load] {v}: {src}")
         d = load_source(src)
         bounds = trajectory_bounds(d["terminals"], d["timeouts"])

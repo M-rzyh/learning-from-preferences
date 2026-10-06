@@ -19,8 +19,8 @@ import argparse, json, pickle
 from pathlib import Path
 import numpy as np
 
-POOL = Path("/scratch/marzii/PT/lunarlander/human_pref_clean/labels_n1000_clean.pkl")
-OUT  = Path("/scratch/marzii/PT/human_label/human")
+POOL = Path("/scratch/marzii/learning-from-preferences/pt/lunarlander/human_pref_clean/labels_n1000_clean.pkl")
+OUT  = Path("/scratch/marzii/learning-from-preferences/pt/human_label/human")
 WEB_TO_PT = {-1: 0, 0: -1, 1: 1}          # same remap as labels_web_to_pt_format.py
 
 

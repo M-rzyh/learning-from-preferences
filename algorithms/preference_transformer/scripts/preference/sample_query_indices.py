@@ -13,7 +13,7 @@ an episode boundary. Writes the start indices in the pickle format that
 Usage
 -----
     python -m scripts.preference.sample_query_indices \
-        --hdf5 $SCRATCH/PT/lunarlander/seed_0/lunarlander-medium-replay-v2.hdf5 \
+        --hdf5 $SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/lunarlander-medium-replay-v2.hdf5 \
         --output_dir human_label/lunarlander-medium-replay-v2/seed_0 \
         --num_query 10 --query_len 100 --seed 42
 """

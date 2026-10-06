@@ -113,7 +113,7 @@ def slice_episode(arrs: dict[str, np.ndarray], bound: tuple[int, int]) -> dict[s
 def main() -> None:
     args = parse_args()
     SCRATCH = Path(os.environ["SCRATCH"])
-    render_root = SCRATCH / f"PT/lunarlander/seed_{args.seed}/render"
+    render_root = SCRATCH / f"learning-from-preferences/pt/lunarlander/seed_{args.seed}/render"
     out_dir = args.out_dir if args.out_dir is not None else render_root / "mixture-v2"
     out_dir.mkdir(parents=True, exist_ok=True)
 

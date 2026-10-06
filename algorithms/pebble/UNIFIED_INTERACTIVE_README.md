@@ -30,7 +30,7 @@ Note the JobID printed (`COMPARE_RUN_DIR=...lunarlander_web_full/<JOBID>/seed_12
 In a separate VS Code terminal on the login node:
 
 ```bash
-PARENT=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/<JOBID>
+PARENT=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/<JOBID>
 
 OPENBLAS_NUM_THREADS=1 python /home/marzii/learning-from-preferences/algorithms/pebble/label_web.py --mode online \
   --online_query_dir "$PARENT" \
@@ -70,8 +70,8 @@ appears, copy the checkpoint to a sibling dir and submit the resume sbatch:
 
 ```bash
 UJ=<UNIFIED_JOBID>
-SRC=/scratch/marzii/compare_runs/pebble/lunarlander_web_full/$UJ/seed_12345/pebble
-COMPARE=/scratch/marzii/compare_runs/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble
+SRC=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/$UJ/seed_12345/pebble
+COMPARE=/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble
 mkdir -p "$COMPARE"
 cp -p "$SRC/checkpoint.pt"* "$COMPARE/"
 RESUME_FROM="$COMPARE/checkpoint.pt" sbatch run_cc_lunar_resume.sh
@@ -95,8 +95,8 @@ Plot side-by-side with the existing multi-seed plotter:
 python /home/marzii/learning-from-preferences/algorithms/pebble/scripts/plot_pebble_multi_seed.py \
   --group "Unified (interactive):$UJ" \
   --group "Split (resume):$UJ" \
-  --root /scratch/marzii/compare_runs/pebble/lunarlander_web_full \
-  --output /scratch/marzii/compare_runs/pebble/unified_vs_split_$UJ.png \
+  --root /scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full \
+  --output /scratch/marzii/learning-from-preferences/pebble/unified_vs_split_$UJ.png \
   --ylim=-600,400
 ```
 
@@ -135,7 +135,7 @@ overlay the PNGs, or copy both train.csv files into a common root.)
 On the login node (substitute `$UJ` with the unified job ID):
 
 ```bash
-tensorboard --logdir_spec "unified:/scratch/marzii/compare_runs/pebble/lunarlander_web_full/$UJ/seed_12345/pebble/tb,compare:/scratch/marzii/compare_runs/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble/tb" --port 6010 --host 127.0.0.1
+tensorboard --logdir_spec "unified:/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full/$UJ/seed_12345/pebble/tb,compare:/scratch/marzii/learning-from-preferences/pebble/lunarlander_web_full_compare/$UJ/seed_12345/pebble/tb" --port 6010 --host 127.0.0.1
 ```
 
 VS Code → **Ports** tab → forward `6010` → open `http://localhost:6010`.

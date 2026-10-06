@@ -20,7 +20,7 @@ One array task = PT reward model → IQL (1M steps) → eval_summary.json.
 Not run directly; submit_ms_count.sh calls it. Manual single N:
     sbatch --array=0-29 --export=ALL,N_COUNT=250 scripts/experiment_grid/run_grid_ms_count.sh
 
-Results: $SCRATCH/PT/lunarlander/grid_mixture_ms/lunarlander-grid-ms-count-N{N}/seed_*/
+Results: $SCRATCH/learning-from-preferences/pt/lunarlander/grid_mixture_ms/lunarlander-grid-ms-count-N{N}/seed_*/
 
 ## Plot
     python scripts/plot_grid_pt_vs_gail.py    # → figures/grid_count_pt_vs_gail.png

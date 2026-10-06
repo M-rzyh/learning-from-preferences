@@ -6,8 +6,8 @@ buffer at the moment the medium actor was snapshotted.
 Usage
 -----
     python -m scripts.offline_data.replay_to_hdf5 \
-        --replay $SCRATCH/PT/lunarlander/sac_run/medium/replay.pkl \
-        --output $SCRATCH/PT/lunarlander/lunarlander-medium-replay-v2.hdf5
+        --replay $SCRATCH/learning-from-preferences/pt/lunarlander/sac_run/medium/replay.pkl \
+        --output $SCRATCH/learning-from-preferences/pt/lunarlander/lunarlander-medium-replay-v2.hdf5
 
 Schema matches `rollout_to_hdf5.py` (D4RL convention).
 """

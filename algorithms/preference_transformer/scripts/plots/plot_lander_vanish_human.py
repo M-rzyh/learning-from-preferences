@@ -31,9 +31,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pyarrow.ipc
 
-PT_BASE = "/scratch/marzii/PT/lunarlander/lander_vanish"
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
-DEMO_ROOT = "/scratch/marzii/imitation_runs/lander_vanish/demos/human"
+PT_BASE = "/scratch/marzii/learning-from-preferences/pt/lunarlander/lander_vanish"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
+DEMO_ROOT = "/scratch/marzii/learning-from-demonstrations/imitation_runs/lander_vanish/demos/human"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C = "#1f77b4"          # blue   — PT

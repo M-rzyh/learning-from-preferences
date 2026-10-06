@@ -30,7 +30,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from control_wrappers import make_control_corruptor
 
-POLICY = "/scratch/marzii/imitation_runs/expert/lunarlander/4615187/policies/final/model.zip"
+POLICY = "/scratch/marzii/learning-from-demonstrations/imitation_runs/expert/lunarlander/4615187/policies/final/model.zip"
 PHYSICS_FPS = 50   # LunarLander: 1 step = 1/50 s of game time
 
 

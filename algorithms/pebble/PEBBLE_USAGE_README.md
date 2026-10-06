@@ -9,7 +9,7 @@ conda activate bpref39_clone
 Every run requires the `COMPARE_RUN_DIR` environment variable:
 
 ```bash
-export COMPARE_RUN_DIR="$SCRATCH/compare_runs/pebble/lunarlander/<run_name>"
+export COMPARE_RUN_DIR="$SCRATCH/learning-from-preferences/pebble/lunarlander/<run_name>"
 mkdir -p "$COMPARE_RUN_DIR"
 ```
 

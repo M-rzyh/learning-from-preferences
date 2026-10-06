@@ -17,9 +17,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
-GA = "/scratch/marzii/imitation_runs/gail/lunarlander"
+GA = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
-S3_LOG = "/scratch/marzii/imitation_runs/record_human_demos/lunarlander/session_3/all_episodes_log.csv"
+S3_LOG = "/scratch/marzii/learning-from-demonstrations/imitation_runs/record_human_demos/lunarlander/session_3/all_episodes_log.csv"
 CURATION_IDX = glob.glob("/home/marzii/learning-from-demonstrations/experiments/gail_session3_curation_*.csv")[0]
 EXPERT_COUNT_CSV = "/home/marzii/learning-from-demonstrations/experiments/gail_grid_count_2026-06-18.csv"
 HUM_C, EXP_C = "#d62728", "#2ca02c"

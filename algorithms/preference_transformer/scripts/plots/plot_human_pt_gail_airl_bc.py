@@ -20,9 +20,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-GA = "/scratch/marzii/imitation_runs/gail/lunarlander"
-BW = "/scratch/marzii/imitation_runs/bc_warmstart/lunarlander"
-PT_MS = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
+GA = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
+BW = "/scratch/marzii/learning-from-demonstrations/imitation_runs/bc_warmstart/lunarlander"
+PT_MS = "/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 

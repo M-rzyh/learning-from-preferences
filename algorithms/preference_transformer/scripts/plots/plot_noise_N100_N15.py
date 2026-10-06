@@ -19,16 +19,16 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pyarrow.ipc
 
-GRID = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
+GRID = "/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 NOISE_IDX = f"{EXP}/gail_grid_noise_N15_2026-07-23.csv"   # rebuilt, authoritative (300 rows)
 COUNT_IDX = f"{EXP}/gail_grid_count_2026-07-22.csv"       # holds count_N15 (the 0% point)
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-_NONFS = "/scratch/marzii/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
-_CLEAN = "/scratch/marzii/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean"
+_NONFS = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
+_CLEAN = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean"
 
 
 def agg(v):

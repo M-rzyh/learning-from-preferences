@@ -20,8 +20,8 @@ conda activate /scratch/marzii/envs/pt
 unset PYTHONPATH
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
-SRC=$SCRATCH/PT/lunarlander/frame_blanking/pt_human/videos_human_n350_clean
-DEST=$SCRATCH/PT/lunarlander/region_mask/pt_human
+SRC=$SCRATCH/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human/videos_human_n350_clean
+DEST=$SCRATCH/learning-from-preferences/pt/lunarlander/region_mask/pt_human
 NUM=350
 mkdir -p "$DEST"
 

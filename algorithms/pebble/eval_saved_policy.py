@@ -19,7 +19,7 @@ is nearly empty in every run.
 
 Run from ~/learning-from-preferences/algorithms/pebble with the bpref39_clone env, e.g.:
 
-  MODEL_DIR=/scratch/marzii/compare_runs/pebble/lunarlander/973283/seed_12345/pebble \
+  MODEL_DIR=/scratch/marzii/learning-from-preferences/pebble/lunarlander/973283/seed_12345/pebble \
   STEP=1000000 EPISODES=50 \
   python eval_saved_policy.py env=gym_LunarLanderContinuous-v2 seed=12345 \
       device=cuda max_episode_steps=1000 \

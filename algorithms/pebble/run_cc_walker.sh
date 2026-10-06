@@ -18,7 +18,7 @@ module load StdEnv/2023
 #conda activate bpref39
 source ~/activate_bpref39.sh
 
-# export COMPARE_RUN_DIR="$SCRATCH/compare_runs/pebble/${SLURM_JOB_ID}"
+# export COMPARE_RUN_DIR="$SCRATCH/learning-from-preferences/pebble/${SLURM_JOB_ID}"
 # mkdir -p "$COMPARE_RUN_DIR"
 # echo "COMPARE_RUN_DIR=$COMPARE_RUN_DIR"
 

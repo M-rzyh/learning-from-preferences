@@ -19,7 +19,7 @@
 # rollout; 200K finishes comfortably in ~30 min.
 #
 # Output per seed:
-#   $SCRATCH/PT/lunarlander/seed_${SEED}/render/medium-v2/
+#   $SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/render/medium-v2/
 #       lunarlander-medium-v2.hdf5     # 200K transitions, lockstep with mp4s
 #       episodes/episode_NNNNN.mp4
 #       episodes/index.pkl
@@ -38,8 +38,8 @@ export SDL_VIDEODRIVER=dummy
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
-ACTOR=$SCRATCH/PT/lunarlander/seed_${SEED}/sac_run/medium/actor.zip
-OUT=$SCRATCH/PT/lunarlander/seed_${SEED}/render/medium-v2
+ACTOR=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/sac_run/medium/actor.zip
+OUT=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/render/medium-v2
 
 if [ ! -f "$ACTOR" ]; then
     echo "ERROR: $ACTOR missing — Phase A must have produced this." 1>&2

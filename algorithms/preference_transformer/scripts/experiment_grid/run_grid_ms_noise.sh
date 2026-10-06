@@ -70,13 +70,13 @@ else
     COND_ID="lunarlander-grid-ms-N${NUM_QUERY}-${NOISE_WORD}${NOISE_PCT}"
 fi
 
-DATASET=$SCRATCH/PT/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/mixture/lunarlander-mixture-v2-s0.hdf5
 EVAL_INTERVAL=${EVAL_INTERVAL:-5000}
 COND_SUFFIX=${COND_SUFFIX:-}
 SKIP_REWARD=${SKIP_REWARD:-0}
 COND_ID="${COND_ID}${COND_SUFFIX}"
 CKPT_DIR=./reward_model/${LABEL_TAG%%-*}/${LABEL_TAG}/PrefTransformer/grid_ms/s${SEED}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/grid_mixture_ms/${COND_ID}/seed_${SEED}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/grid_mixture_ms/${COND_ID}/seed_${SEED}
 
 [[ -f "$DATASET" ]] || { echo "ERROR: $DATASET missing." 1>&2; exit 1; }
 [[ -f "human_label/synthetic/${LABEL_TAG}/label_human" ]] || {

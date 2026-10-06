@@ -44,8 +44,8 @@ RUN_TAG=${RUN_TAG:-}
 COND_ID="lunarlander-truereward-iql${RUN_TAG:+-$RUN_TAG}"
 # The rendered mixture -- the exact dataset the human and scripted count-axis
 # runs train on (and the file their preference segments were cut from).
-DATASET=${DATASET:-$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/grid_mixture_ms/${COND_ID}/seed_${SEED}
+DATASET=${DATASET:-$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/grid_mixture_ms/${COND_ID}/seed_${SEED}
 
 [[ -f "$DATASET" ]] || { echo "ERROR: $DATASET missing." 1>&2; exit 1; }
 

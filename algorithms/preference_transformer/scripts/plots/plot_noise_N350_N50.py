@@ -9,13 +9,13 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pyarrow.ipc
 
-GRID = "/scratch/marzii/PT/lunarlander/grid_mixture_ms"
-GAIL_BASE = "/scratch/marzii/imitation_runs/gail/lunarlander"
+GRID = "/scratch/marzii/learning-from-preferences/pt/lunarlander/grid_mixture_ms"
+GAIL_BASE = "/scratch/marzii/learning-from-demonstrations/imitation_runs/gail/lunarlander"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 PT_C, GA_C = "#1f77b4", "#9467bd"
 LEVELS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-_NONFS = "/scratch/marzii/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
-_CLEAN = "/scratch/marzii/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean"
+_NONFS = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos_online_nonFS/lunarlander/expert_4615187"
+_CLEAN = "/scratch/marzii/learning-from-demonstrations/imitation_runs/noisy_demos/lunarlander/expert_4615187/n100_p0_clean"
 
 
 def agg(v):

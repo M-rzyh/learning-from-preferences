@@ -39,9 +39,9 @@ cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 
 SEED=${SEED:-0}
 ENV_TAG=lunarlander-medium-v2-human-s${SEED}
-DATASET=$SCRATCH/PT/lunarlander/seed_${SEED}/render/medium-v2/lunarlander-medium-v2.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_${SEED}/render/medium-v2/lunarlander-medium-v2.hdf5
 CKPT_DIR=./reward_model/${ENV_TAG%%-*}/${ENV_TAG}/PrefTransformer/human100/s${SEED}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/iql_runs/human100/seed_${SEED}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/iql_runs/human100/seed_${SEED}
 
 if [ ! -f "$DATASET" ]; then
     echo "ERROR: $DATASET missing." 1>&2

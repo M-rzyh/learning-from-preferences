@@ -24,7 +24,7 @@ unset PYTHONPATH
 cd /home/marzii/learning-from-preferences/algorithms/preference_transformer
 # RENDERED mixture (same data the human labels from real videos) — keeps the
 # blind-oracle (#3) and blind-human (#4) PT arms on identical segments.
-DATASET=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
 NSEEDS=${1:-5}
 LEVELS="0 25 50 75"
 

@@ -42,7 +42,7 @@ echo "python=$(which python)"
 echo "jobid=$SLURM_JOB_ID"
 
 # Path to human labels (change this path to use different labels)
-export HUMAN_LABELS_PATH=${HUMAN_LABELS_PATH:-/scratch/marzii/compare_runs/pebble/lunarlander/4624956/human_labels.pkl}
+export HUMAN_LABELS_PATH=${HUMAN_LABELS_PATH:-/scratch/marzii/learning-from-preferences/pebble/lunarlander/4624956/human_labels.pkl}
 
 start_time=`date +%s`
 

@@ -42,9 +42,9 @@ SEED=${SEED:-${SLURM_ARRAY_TASK_ID:-0}}
 NQ=100
 TAG=humanvanish${PCT}
 ENV_TAG=lunarlander-mixture-v2-${TAG}-s${SEED}
-DATASET=$SCRATCH/PT/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
+DATASET=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render/mixture-v2/lunarlander-mixture-v2.hdf5
 CKPT_DIR=./reward_model/${ENV_TAG%%-*}/${ENV_TAG}/PrefTransformer/${TAG}/s${SEED}
-IQL_LOG_DIR=$SCRATCH/PT/lunarlander/lander_vanish/${TAG}_mixture/seed_${SEED}
+IQL_LOG_DIR=$SCRATCH/learning-from-preferences/pt/lunarlander/lander_vanish/${TAG}_mixture/seed_${SEED}
 
 [[ -f "$DATASET" ]] || { echo "ERROR: $DATASET missing." 1>&2; exit 1; }
 # Fail before burning a GPU hour: a missing label dir means the human hasn't labelled this

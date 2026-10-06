@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=pt-build-vanish
 #SBATCH --account=aip-mtaylor3
-#SBATCH --output=/scratch/marzii/PT/logs/vanish/%x_%j.out
-#SBATCH --error=/scratch/marzii/PT/logs/vanish/%x_%j.err
+#SBATCH --output=/scratch/marzii/learning-from-preferences/pt/logs/vanish/%x_%j.out
+#SBATCH --error=/scratch/marzii/learning-from-preferences/pt/logs/vanish/%x_%j.err
 #SBATCH --time=06:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
@@ -25,14 +25,14 @@ set -euo pipefail
 
 PY=/scratch/marzii/envs/pt/bin/python
 REPO=/home/marzii/learning-from-preferences/algorithms/preference_transformer
-SRC=/scratch/marzii/PT/lunarlander/frame_blanking/pt_human/videos_human_n350_clean
-DEST_ROOT=/scratch/marzii/PT/lunarlander/lander_vanish/pt_human
+SRC=/scratch/marzii/learning-from-preferences/pt/lunarlander/frame_blanking/pt_human/videos_human_n350_clean
+DEST_ROOT=/scratch/marzii/learning-from-preferences/pt/lunarlander/lander_vanish/pt_human
 N=100          # pairs per set (the low budget)
 QLEN=100       # frames per clip
 BLOCK=5        # b=5 -> 0.25 s at 20 fps
 SEED=0
 
-mkdir -p /scratch/marzii/PT/logs/vanish "$DEST_ROOT"
+mkdir -p /scratch/marzii/learning-from-preferences/pt/logs/vanish "$DEST_ROOT"
 
 for PCT in 25 50 75; do
   DEST="$DEST_ROOT/videos_human_n100_vanish${PCT}"

@@ -3,8 +3,8 @@
 #SBATCH --account=aip-mtaylor3
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
-#SBATCH --output=/scratch/marzii/PT/logs/delay/%x_%j.out
-#SBATCH --error=/scratch/marzii/PT/logs/delay/%x_%j.err
+#SBATCH --output=/scratch/marzii/learning-from-preferences/pt/logs/delay/%x_%j.out
+#SBATCH --error=/scratch/marzii/learning-from-preferences/pt/logs/delay/%x_%j.err
 #
 # NOTE: no #SBATCH --time here on purpose. Walltime is passed at submit so light jobs
 # schedule fast and heavy ones get enough runway:
@@ -45,8 +45,8 @@ QUERY_LEN=${QUERY_LEN:-100}
 SEED=${SEED:-0}
 SUFFIX=${SUFFIX:-}               # e.g. _val to isolate a validation run
 
-RENDER=$SCRATCH/PT/lunarlander/seed_0/render
-DELAY=$SCRATCH/PT/lunarlander/action_delay
+RENDER=$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/render
+DELAY=$SCRATCH/learning-from-preferences/pt/lunarlander/action_delay
 TAG="delay${K}${SUFFIX}"
 
 echo "=============================================================="
@@ -67,7 +67,7 @@ else
     else
       echo "[build-delay] rolling $V under delay K=$K -> $D"
       python -m scripts.offline_data.rollout_with_video \
-          --actor "$SCRATCH/PT/lunarlander/seed_0/sac_run/${V}/actor.zip" \
+          --actor "$SCRATCH/learning-from-preferences/pt/lunarlander/seed_0/sac_run/${V}/actor.zip" \
           --output_dir "$D" --num_steps "$NUM_STEPS" --fps 20 --seed "$SEED" \
           --variant "$V" --delay-k "$K"
     fi

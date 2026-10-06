@@ -14,7 +14,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-BC_RUNS = "/scratch/marzii/imitation_runs/bc/lunarlander"
+BC_RUNS = "/scratch/marzii/learning-from-demonstrations/imitation_runs/bc/lunarlander"
 EXP = "/home/marzii/learning-from-demonstrations/experiments"
 FIG = "/home/marzii/learning-from-preferences/algorithms/preference_transformer/figures"
 CONDS = ["expert15", "human_flagged15", "human_first15"]
